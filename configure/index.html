@@ -164,14 +164,25 @@
             <div class="section">
               
                 <h1 id="general-settings">General Settings<a class="headerlink" href="#general-settings" title="Permanent link">⌁</a></h1>
+<p><img src="../img/Settings.png" style="zoom:75%;" /></p>
 <p>In a <a href="../connect/">previous section</a>, you should have initially configured xDrip4iOS to use <strong>mg/dl</strong> or <strong>mmol/l</strong> and to act as a <strong>Master</strong> or <strong>Follower</strong> device.</p>
 <p>Now we can start to configure the app to work as we want. When you first install xDrip4iOS, we will put some default values that should work fine for most users to start using the app with.</p>
 <hr />
 <h2 id="show-notifications">Show Notifications<a class="headerlink" href="#show-notifications" title="Permanent link">⌁</a></h2>
-<p>You can enable xDrip4iOS to show a notification on your phone every 5 minutes. This will appear as per the Notification settings for xDrip4iOS in your iPhone settings. You can enabled banner notifications and chose if it will show on the lock-screen or not.</p>
+<p>You can enable xDrip4iOS to show a notification on your phone every 5 minutes. This will appear as per the Notification settings for xDrip4iOS in your iPhone settings. You can enable banner notifications and chose if it will show on the lock-screen or not.</p>
+<p><img src="SettingsNotification.png" style="zoom:50%;" /></p>
+<p><img src="Notification.png" style="zoom:50%;" /></p>
 <p>You can also enable the App Badge which will should your current BG value on the app icon.</p>
-<p>When using mmol/l the App Badge will display decimals only if Show BG in Notifications is enabled. If you disable Notifications you can use multiply by 10 to show the full value (you'll need to mentally add the decimal point. 61 means 6.1 mmol/l).</p>
-<p>If not, here are some options that you might like to adjust:</p>
+<p><img src="SettingsNotifBadge.png" style="zoom:50%;" /></p>
+<p><img src="Badge.png" style="zoom:54%;" /></p>
+<div class="admonition info">
+<p class="admonition-title">Decimals</p>
+<p>When using mmol/l the App Badge will display decimals only if Show BG in Notifications is enabled.</p>
+</div>
+<p><img src="SettingsBadge.png" style="zoom:50%;" /></p>
+<p>If you disable Notifications you can use multiply by 10 to show the full value (you'll need to mentally add the decimal point. 94 means 9.4 mmol/l).</p>
+<p><img src="SettingsBadge10.png" style="zoom:50%;" /></p>
+<p></br></p>
 <hr />
 <h2 id="objective-values">Objective Values<a class="headerlink" href="#objective-values" title="Permanent link">⌁</a></h2>
 <p>We think of objective values as our working limits. We define theses limits as being:</p>
@@ -186,14 +197,19 @@
 <p>When our glucose values are below our Low value or above our High value, but still not anything to be worried about, then we will see them in <span style="color:orange"><strong>yellow</strong></span>. We might use this as a sign that we should think about taking some kind of action (eat something or take insulin) before the values become "urgent".</p>
 <h3 id="out-of-range-urgent"><img alt="" src="../img/circle_red.png" /> Out of Range (Urgent)<a class="headerlink" href="#out-of-range-urgent" title="Permanent link">⌁</a></h3>
 <p>When our glucose values are above or below our "Urgent" values, then we consider them to need urgent attention and we will see them in <span style="color:red"><strong>red</strong></span>. We set these limits using the <code>Urgent Low Value</code> and <code>Urgent High Value</code> We should take evaluate the situation and decide if we must take action (eat glucose or take insulin).</p>
+<p><img src="Values.png" style="zoom:50%;" /></p>
+<p></br></p>
 <hr />
 <h2 id="graph-options">Graph Options<a class="headerlink" href="#graph-options" title="Permanent link">⌁</a></h2>
 <p>xDrip4iOS allows us to show the main graph in two ways:</p>
 <h3 id="dynamic-y-axis">Dynamic y-axis<a class="headerlink" href="#dynamic-y-axis" title="Permanent link">⌁</a></h3>
 <p>This option (used by default) will use our objective values to define the values shown on the vertical axis. It will also show guidelines across the graph so that we can easily see how close we are to each limit.</p>
+<p><img src="yDynamic.png" style="zoom:50%;" /></p>
 <p>The graph will automatically scale if our blood glucose value is above our Urgent High value.</p>
 <h3 id="standard-grid">Standard Grid<a class="headerlink" href="#standard-grid" title="Permanent link">⌁</a></h3>
-<p>By deselecting the dynamic graph option, xDrip4iOS will just show a default grid system. Again, the graph will scale as needed.</p>
+<p>By deselecting the dynamic graph option, xDrip4iOS will just show a default grid system.</p>
+<p><img src="yStatic.png" style="zoom:50%;" /></p>
+<p>Again, the graph will scale as needed.</p>
               
             </div>
           </div>
