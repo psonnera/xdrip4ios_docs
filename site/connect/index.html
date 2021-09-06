@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Initial Configuration - xDrip4iOS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/admonitions.css" rel="stylesheet" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Initial Configuration";
+    var mkdocs_page_input_path = "connect\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> xDrip4iOS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Install</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../install/testflight/">Install from Testflight</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../install/build/">Build from Source</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Connect</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Initial Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#master-or-follower">Master or Follower?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blood-glucose-unit">Blood Glucose Unit</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="cgm/">Connect to CGM as a Master</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="follower/">Connect to Nightscout as a Follower</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="devices/">Connect to M5Stack/M5StickC</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configure/Use</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/">General</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/alarms/">Alarms</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/algorithm/">Algorithm</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/applewatch/">Apple Watch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/smartwatches/">Other Smartwatches</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/freeaps/">FreeAPS (Loop) Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configure/freeapsx/">FreeAPS X (OpenAPS) Integration</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Use and Troubleshoot</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../troubleshoot/">Troubleshooting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../troubleshoot/connection_troubles.md">Cannot Connect?</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../troubleshoot/disconnections/">Disconnections?</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../troubleshoot/reporting.md">How to Report Errors</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">xDrip4iOS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Connect &raquo;</li>
+        
+      
+    
+    <li>Initial Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="connect-a-data-source">Connect a Data Source<a class="headerlink" href="#connect-a-data-source" title="Permanent link">⌁</a></h1>
+<p><img src="../img/Settings.png" style="zoom:75%;" /></p>
+<p></br></p>
+<h2 id="master-or-follower">Master or Follower?<a class="headerlink" href="#master-or-follower" title="Permanent link">⌁</a></h2>
+<p>In order to be able to see Blood Glucose data in xDrip4iOS, you need to connect it to a <strong>data source</strong>.</p>
+<p>There are two types of data sources that you can use:</p>
+<p>In <strong>Master</strong> mode, your iPhone will connect directly to a bluetooth-enabled CGM system (sensor/transmitter) in order to receive real-time data.</p>
+<p>In <strong>Follower</strong> mode, your iPhone will connect to a Nightscout site over the internet  and pull real-time data. </p>
+<p>Put simply, a <strong>Master</strong> is usually used by the actual person who is wearing the sensor and a <strong>Follower</strong> is usually a parent/friend/caregiver that wants to be able to track (follow) the other person's CGM values.</p>
+<p>Once we've decided whether we want to use xDrip4iOS as a <strong>Master</strong> or a <strong>Follower</strong> device, we need to click on the Settings tab and chose the mode we want. Click on the option if you need to change it between the two modes.</p>
+<p><img src="Master.png" style="zoom:50%;" /></p>
+<p></br></p>
+<h2 id="blood-glucose-unit">Blood Glucose Unit<a class="headerlink" href="#blood-glucose-unit" title="Permanent link">⌁</a></h2>
+<p>The next step is to make sure that the Blood Glucose unit is correctly set. </p>
+<p>If you are used to seeing your BG values as small numbers with a single decimal place such as 4.7, 6.3 or 10.4 then you are using <strong>mmol/l</strong>.
+<br />
+<em>(Common in Canada, Northen Europe, Australia, South Africa, China etc)</em></p>
+<p>If you usually see your BG values as bigger numbers such as 76, 127 or 215 then you are using <strong>mg/dl</strong>.
+<br />
+<em>(Common in USA, Southern Europe, India, Japan, Central/South America etc)</em></p>
+<p><img src="Unit.png" style="zoom:50%;" /></p>
+<p>Once you've set your device mode and BG unit, you're ready to connect a data source.</p>
+<p>Click <a href="cgm/">here</a> to connect to your CGM as a Master</p>
+<p>Click <a href="follower/">here</a> to connect to Nightscout as a Follower</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cgm/" class="btn btn-neutral float-right" title="Connect to CGM as a Master">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../install/build/" class="btn btn-neutral" title="Build from Source"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../install/build/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="cgm/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
