@@ -21,7 +21,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "General";
-    var mkdocs_page_input_path = "configure\\index.md";
+    var mkdocs_page_input_path = "configure/index.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -75,7 +75,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../connect/devices/">Connect to M5Stack/M5StickC</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Configure/Use</span></p>
+                <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">General</a>
     <ul class="current">
@@ -105,18 +105,19 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="calibrate/">Calibration</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="algorithm/">Algorithm</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="applewatch/">Apple Watch</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="smartwatches/">Other Smartwatches</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="freeaps/">FreeAPS (Loop) Integration</a>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../advanced/freeaps/">FreeAPS (Loop) Integration</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="freeapsx/">FreeAPS X (OpenAPS) Integration</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../advanced/freeapsx/">FreeAPS X (OpenAPS) Integration</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Use and Troubleshoot</span></p>
+                <p class="caption"><span class="caption-text">Troubleshoot</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../troubleshoot/">Troubleshooting</a>
                     </li>
@@ -148,7 +149,7 @@
     
       
         
-          <li>Configure/Use &raquo;</li>
+          <li>Configure/Using &raquo;</li>
         
       
     
@@ -170,19 +171,18 @@
 <hr />
 <h2 id="show-notifications">Show Notifications<a class="headerlink" href="#show-notifications" title="Permanent link">⌁</a></h2>
 <p>You can enable xDrip4iOS to show a notification on your phone every 5 minutes. This will appear as per the Notification settings for xDrip4iOS in your iPhone settings. You can enable banner notifications and chose if it will show on the lock-screen or not.</p>
-<p><img src="SettingsNotification.png" style="zoom:50%;" /></p>
-<p><img src="Notification.png" style="zoom:50%;" /></p>
+<p><img src="img/SettingsNotification.png" style="zoom:50%;" /></p>
+<p><img src="img/Notification.png" style="zoom:50%;" /></p>
 <p>You can also enable the App Badge which will should your current BG value on the app icon.</p>
-<p><img src="SettingsNotifBadge.png" style="zoom:50%;" /></p>
-<p><img src="Badge.png" style="zoom:54%;" /></p>
+<p><img src="img/SettingsNotifBadge.png" style="zoom:50%;" /></p>
+<p><img src="img/Badge.png" style="zoom:54%;" /></p>
 <div class="admonition info">
 <p class="admonition-title">Decimals</p>
 <p>When using mmol/l the App Badge will display decimals only if Show BG in Notifications is enabled.</p>
 </div>
-<p><img src="SettingsBadge.png" style="zoom:50%;" /></p>
+<p><img src="img/SettingsBadge.png" style="zoom:50%;" /></p>
 <p>If you disable Notifications you can use multiply by 10 to show the full value (you'll need to mentally add the decimal point. 94 means 9.4 mmol/l).</p>
-<p><img src="SettingsBadge10.png" style="zoom:50%;" /></p>
-<p></br></p>
+<p><img src="img/SettingsBadge10.png" style="zoom:50%;" /></p>
 <hr />
 <h2 id="objective-values">Objective Values<a class="headerlink" href="#objective-values" title="Permanent link">⌁</a></h2>
 <p>We think of objective values as our working limits. We define theses limits as being:</p>
@@ -197,18 +197,17 @@
 <p>When our glucose values are below our Low value or above our High value, but still not anything to be worried about, then we will see them in <span style="color:orange"><strong>yellow</strong></span>. We might use this as a sign that we should think about taking some kind of action (eat something or take insulin) before the values become "urgent".</p>
 <h3 id="out-of-range-urgent"><img alt="" src="../img/circle_red.png" /> Out of Range (Urgent)<a class="headerlink" href="#out-of-range-urgent" title="Permanent link">⌁</a></h3>
 <p>When our glucose values are above or below our "Urgent" values, then we consider them to need urgent attention and we will see them in <span style="color:red"><strong>red</strong></span>. We set these limits using the <code>Urgent Low Value</code> and <code>Urgent High Value</code> We should take evaluate the situation and decide if we must take action (eat glucose or take insulin).</p>
-<p><img src="Values.png" style="zoom:50%;" /></p>
-<p></br></p>
+<p><img src="img/Values.png" style="zoom:50%;" /></p>
 <hr />
 <h2 id="graph-options">Graph Options<a class="headerlink" href="#graph-options" title="Permanent link">⌁</a></h2>
 <p>xDrip4iOS allows us to show the main graph in two ways:</p>
 <h3 id="dynamic-y-axis">Dynamic y axis<a class="headerlink" href="#dynamic-y-axis" title="Permanent link">⌁</a></h3>
-<p>This option (used by default) will use our objective values to define the values shown on the vertical axis. It will also show guidelines across the graph so that we can easily see how close we are to each limit.</p>
-<p><img src="yDynamic.png" style="zoom:50%;" /></p>
+<p>This option (used by default) will use our <strong>objective values</strong> (see above) to define the values shown on the vertical axis. It will also show guidelines across the graph so that we can easily see how close we are to each limit.</p>
+<p><img src="img/yDynamic.png" style="zoom:50%;" /></p>
 <p>The graph will automatically scale if our blood glucose value is above our Urgent High value.</p>
 <h3 id="standard-grid">Standard Grid<a class="headerlink" href="#standard-grid" title="Permanent link">⌁</a></h3>
 <p>By deselecting the dynamic graph option, xDrip4iOS will just show a default grid system.</p>
-<p><img src="yStatic.png" style="zoom:50%;" /></p>
+<p><img src="img/yStatic.png" style="zoom:50%;" /></p>
 <p>Again, the graph will scale as needed.</p>
               
             </div>

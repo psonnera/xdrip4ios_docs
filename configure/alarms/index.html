@@ -21,7 +21,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Alarms";
-    var mkdocs_page_input_path = "configure\\alarms.md";
+    var mkdocs_page_input_path = "configure/alarms.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -75,7 +75,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../connect/devices/">Connect to M5Stack/M5StickC</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Configure/Use</span></p>
+                <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../">General</a>
                     </li>
@@ -91,18 +91,19 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../calibrate/">Calibration</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../algorithm/">Algorithm</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../applewatch/">Apple Watch</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../smartwatches/">Other Smartwatches</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../freeaps/">FreeAPS (Loop) Integration</a>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced/freeaps/">FreeAPS (Loop) Integration</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../freeapsx/">FreeAPS X (OpenAPS) Integration</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced/freeapsx/">FreeAPS X (OpenAPS) Integration</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Use and Troubleshoot</span></p>
+                <p class="caption"><span class="caption-text">Troubleshoot</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/">Troubleshooting</a>
                     </li>
@@ -134,7 +135,7 @@
     
       
         
-          <li>Configure/Use &raquo;</li>
+          <li>Configure/Using &raquo;</li>
         
       
     
@@ -172,7 +173,7 @@
     <br /><br /></li>
 <li>We define the <strong>Alarms</strong> themselves. These trigger different types of alarm based upon certain events that happen or conditions that we decide.</li>
 </ol>
-<p><img src="../Alarm+Type.png" style="zoom:50%;" /></p>
+<p><img src="../img/Alarm+Type.png" style="zoom:50%;" /></p>
 <div class="admonition info">
 <p class="admonition-title">Before we continue...</p>
 <p>Let's just quickly get the concept clear. Take a deep breath and repeat after me...</p>
@@ -185,7 +186,7 @@
 <hr />
 <h2 id="alarm-types">Alarm Types<a class="headerlink" href="#alarm-types" title="Permanent link">⌁</a></h2>
 <p>Here we will define the different types of alarm that we will hear. </p>
-<p><img src="../AlarmType.png" style="zoom:50%;" /></p>
+<p><img src="../img/AlarmType.png" style="zoom:50%;" /></p>
 <p>If you go into Alarm Types, you will see that we there is a default Alarm Type set. We called it "Default"... because we're original and clever. You can modify this, or you can create your own Alarm Type.</p>
 <div class="admonition info">
 <p class="admonition-title">Suggestion</p>
@@ -193,7 +194,7 @@
 </div>
 <p>If you want to add a new/custom Alarm Type, click the + button top right and configure it.</p>
 <p>We can set the following parameters for an Alarm Type:</p>
-<p><img src="../EditAlarmType.png" style="zoom:50%;" /></p>
+<p><img src="../img/EditAlarmType.png" style="zoom:50%;" /></p>
 <table>
 <thead>
 <tr>
@@ -232,16 +233,14 @@
 </tr>
 </tbody>
 </table>
-<p><br /></p>
 <p>Once you've finished editing your Alarm Type, make sure you hit <strong>Done</strong> in the top-right corner. If you don't, you'll lose your changes.</p>
 <p>Eventually, you will have different alarm types, matching your needs in terms of sounds and vibrations.
 Having several types will help you selectively disable some of them if necessary.</p>
-<p><img src="../AlarmTypes.png" style="zoom:50%;" /></p>
-<p></br></p>
+<p><img src="../img/AlarmTypes.png" style="zoom:50%;" /></p>
 <hr />
 <h2 id="alarms">Alarms<a class="headerlink" href="#alarms" title="Permanent link">⌁</a></h2>
 <p>Now that we have an Alarm Type configured, we can configure the individual Alarms.</p>
-<p><img src="../EditAlarm.png" style="zoom:50%;" /></p>
+<p><img src="../img/EditAlarm.png" style="zoom:50%;" /></p>
 <p>An alarm will be triggered when the something meets a defined condition. For example you could define an alarm to be triggered:</p>
 <ul>
 <li>
@@ -262,39 +261,37 @@ Having several types will help you selectively disable some of them if necessary
 </ul>
 <p>In the above examples, you will see two things. The <strong>Alarms</strong> that are available and the <strong>conditions</strong> that we can set for them to be triggered.</p>
 <p>Level alarms will trigger above (high) or below (low) a certain blood glucose level.</p>
-<p><img src="../LevelAlarm.png" style="zoom:50%;" /></p>
+<p><img src="../img/LevelAlarm.png" style="zoom:50%;" /></p>
 <p>Rise and drop alarms will trigger if blood glucose change over the last 2 readings (or 4 minutes for Libre 2 direct) is larger than the level you've setup.</p>
-<p><img src="../DeltaAlarm.png" style="zoom:50%;" /></p>
+<p><img src="../img/DeltaAlarm.png" style="zoom:50%;" /></p>
 <p>Missed readings will trigger after the defined time without receiving any blood glucose data.</p>
-<p><img src="../MissReadAlarm.png" style="zoom:50%;" /></p>
+<p><img src="../img/MissReadAlarm.png" style="zoom:50%;" /></p>
 <p>Calibrations needed alarm will trigger after the defined amount of hours since last calibration was entered in xDrip4iOS.</p>
-<p><img src="../CalibAlarm.png" style="zoom:50%;" /></p>
+<p><img src="../img/CalibAlarm.png" style="zoom:50%;" /></p>
 <p>Battery alarm will trigger when the battery falls below the defined percentage.</p>
-<p><img src="../BatteryAlarm.png" style="zoom:50%;" /></p>
-<p></br></p>
+<p><img src="../img/BatteryAlarm.png" style="zoom:50%;" /></p>
 <p>Each alarm will use one of the alarm types you created, select the one you'd like to be used for this alarm event:</p>
-<p><img src="../SelectAlarmType.png" style="zoom:50%;" /></p>
-<p></br></p>
+<p><img src="../img/SelectAlarmType.png" style="zoom:50%;" /></p>
 <p>You can also change the alarm type and threshold for certain moments of the day, for this you need to add alarms like in this example:</p>
 <p>Say you'd like to have your Low Alarm to trigger only at night time (22:00 to 7:00). Select your low alarm and add an alarm with the + icon top right.</p>
-<p><img src="../AlarmTime1.png" style="zoom:50%;" /></p>
+<p><img src="../img/AlarmTime1.png" style="zoom:50%;" /></p>
 <p>On the new Low Alarm, change Apply from to 7:00 and Ok.</p>
-<p><img src="../AlarmTime2.png" style="zoom:50%;" /></p>
+<p><img src="../img/AlarmTime2.png" style="zoom:50%;" /></p>
 <p>Set the Alarm Type and Done.
 You now have two different Low Alarms: Loud from 00:00 to 7:00 and quiet from 7:00 to 00:00.</p>
-<p><img src="../AlarmTime3.png" style="zoom:50%;" /></p>
+<p><img src="../img/AlarmTime3.png" style="zoom:50%;" /></p>
 <p>Now select the second alarm (starting at 7:00) and repeat the sequence with a new alarm starting at 22:00, alarm type Loud. Save.
 You now have the Low Alarm trigger with the alarm type Loud from 22:00 to 7:00 and the rest of the day with Quiet.</p>
-<p><img src="../AlarmTime4.png" style="zoom:50%;" /></p>
+<p><img src="../img/AlarmTime4.png" style="zoom:50%;" /></p>
 <p>You could also have modified the threshold value for different moments of the day.</p>
 <hr />
 <h2 id="volume-tests">Volume Tests<a class="headerlink" href="#volume-tests" title="Permanent link">⌁</a></h2>
 <p>They alarm will sound with the volume that your iPhone is set to.</p>
 <p>This could mean that you have the volume turned right down and would then not hear anything.</p>
 <p>In order to be able to quickly test what volume your alarms will sound at (before going to bed for example), you can click the Volume Test buttons. A sample Alarm sound will play and you can adjust the volume as required using the volume keys on the side of your iPhone. Then just click OK to stop the alarm.</p>
-<p><img src="../TestOvrMuteOff.png" style="zoom:60%;" /></p>
+<p><img src="../img/TestOvrMuteOff.png" style="zoom:60%;" /></p>
 <p>If you have alarms that use the Override Mute function, then when silent mode is activated (the small switch above the volume keys), there will be a different volume level used. To test/set this level, click the Volume Test (Override Mute) button, set the level and click OK.</p>
-<p><img src="../TestOvrMuteOn.png" style="zoom:60%;" /></p>
+<p><img src="../img/TestOvrMuteOn.png" style="zoom:60%;" /></p>
               
             </div>
           </div>

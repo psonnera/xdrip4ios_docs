@@ -21,7 +21,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Build from Source";
-    var mkdocs_page_input_path = "install\\build.md";
+    var mkdocs_page_input_path = "install/build.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -85,7 +85,7 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../connect/devices/">Connect to M5Stack/M5StickC</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Configure/Use</span></p>
+                <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/">General</a>
                     </li>
@@ -93,18 +93,19 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/algorithm/">Algorithm</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/smartwatches/">Other Smartwatches</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/freeaps/">FreeAPS (Loop) Integration</a>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced/freeaps/">FreeAPS (Loop) Integration</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/freeapsx/">FreeAPS X (OpenAPS) Integration</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced/freeapsx/">FreeAPS X (OpenAPS) Integration</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Use and Troubleshoot</span></p>
+                <p class="caption"><span class="caption-text">Troubleshoot</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/">Troubleshooting</a>
                     </li>
@@ -152,14 +153,33 @@
             <div class="section">
               
                 <h1 id="how-to-build-xdrip4ios-using-xcode">How to Build xDrip4iOS using Xcode<a class="headerlink" href="#how-to-build-xdrip4ios-using-xcode" title="Permanent link">⌁</a></h1>
-<p>Project repository <a href="https://github.com/JohanDegraeve/xdripswift">here</a></p>
+<p>Although for most users, the recommended method for installing xDrip4iOS is to just use <a href="../testflight/">Testflight</a>, many users will want to build directly from source. If so, this page is for you!</p>
+<p><img alt="Xcode" src="../img/build_xcode.png" /></p>
+<p>xDrip4iOS is an open-source project and is released under the <a href="https://github.com/JohanDegraeve/xdripswift/blob/master/LICENSE"><strong>GNU General Public License v3.0</strong></a>.</p>
+<p>Most users that decide to build from source will be people who are interested in collaborating in the development of the project or users who are used to DIY solutions (such as Loop or FreeAPS), have a valid Apple Developer license/account and are comfortable working with Xcode.</p>
+<p>Although <strong>xDrip4iOS</strong> is the common <em>public</em> name for the application, the actual Github project name is <strong>xdripswift</strong> and you will often so it referred to as this in the following documentation.</p>
+<p>The main project repository is <a href="https://github.com/JohanDegraeve/xdripswift">here</a></p>
+<p>Ready? So then let's begin. Here are some of the things that you'll need before you're able to build and install the app:</p>
+<ul>
+<li>A Mac computer (iMac, MacBook etc).</li>
+<li>A valid Apple Developer account/license. If not, you could theoretically use a free Apple ID to sign the app with but you will have to remove Healthkit and NFC integration capabilities as well as needing to re-sign the app every 7 days. <strong><em>It's really not worth considering this path if you do not have a current Apple Developer account</em></strong></li>
+<li>Xcode installed. This can be done from the App Store on your Mac.</li>
+<li>Git installed. If you're unsure how to do this, please follow the guide <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a>.</li>
+<li>A compatible cable to connect your iPhone (Lightning port) to your Mac (USB-C or USB-A as needed)</li>
+</ul>
+<p>It is recommeneded to always use the latest versions of MacOS and Xcode. Your iPhone should ideally also be using the latest version of iOS.</p>
+<div class="admonition info">
+<p class="admonition-title">APPLE "M1" PROCESSOR?</p>
+<p>If you are using a newer (2020-2021) Mac Mini, MacBook Air or MacBook Pro with the new M1 processor (aka <em>Apple Silicon</em>) please note that there will be some small changes needed in the below steps. They will be clearly marked.</p>
+<p>The first thing to note is that you should use </p>
+</div>
 <hr />
 <h3 id="install-the-cocoa-pods-framework-to-your-mac">Install the Cocoa Pods Framework to your Mac<a class="headerlink" href="#install-the-cocoa-pods-framework-to-your-mac" title="Permanent link">⌁</a></h3>
 <p>If this is the first time that you have built xDrip4iOS on your Mac, then you will need to install a set of frameworks called CocoaPods. If you have previously installed CocoaPods, you can skip this step.</p>
-<p>Enter the following command into Terminal:</p>
+<p>Enter the following command into Terminal. This must be done with admin rights, so we will use <strong>sudo</strong> (it will ask for your admin password):</p>
 <pre><code>sudo gem install cocoapods
 </code></pre>
-<p>This should install the dependencies and give you an OK message.</p>
+<p>This should install the dependencies onto your system and give you an OK message.</p>
 <h3 id="clone-the-xdripswift-project">Clone the xdripswift project<a class="headerlink" href="#clone-the-xdripswift-project" title="Permanent link">⌁</a></h3>
 <p>You should go into your Documents folder (or wherever you prefer) and run the following command to clone the xDrip4iOS project:</p>
 <pre><code>git clone --branch=master --recurse-submodules https://github.com/JohanDegraeve/xdripswift

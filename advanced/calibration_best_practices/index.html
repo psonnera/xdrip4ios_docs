@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Calibration best practices - xDrip4iOS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/admonitions.css" rel="stylesheet" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Calibration best practices";
+    var mkdocs_page_input_path = "advanced/calibration_best_practices.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> xDrip4iOS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Install</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../install/testflight/">Install from Testflight</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../install/build/">Build from Source</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Connect</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/">Initial Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/cgm/">Connect to CGM as a Master</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/follower/">Connect to Nightscout as a Follower</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/devices/">Connect to M5Stack/M5StickC</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configure/Using</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">General</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/alarms/">Alarms</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/smartwatches/">Other Smartwatches</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../freeaps/">FreeAPS (Loop) Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../freeapsx/">FreeAPS X (OpenAPS) Integration</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Troubleshoot</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/">Troubleshooting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../troubleshoot/connection_troubles.md">Cannot Connect?</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/disconnections/">Disconnections?</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../troubleshoot/reporting.md">How to Report Errors</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">xDrip4iOS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Calibration best practices</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="calibration-best-practices">Calibration Best Practices<a class="headerlink" href="#calibration-best-practices" title="Permanent link">⌁</a></h2>
+<h3 id="why-is-it-important-to-calibrate-properly">Why is it important to calibrate properly?<a class="headerlink" href="#why-is-it-important-to-calibrate-properly" title="Permanent link">⌁</a></h3>
+<h4 id="how-often-should-i-calibrate-is-it-true-that-my-sensor-will-be-more-accurate-if-i-calibrate-3-times-per-day">How often should I calibrate? Is it true that my sensor will be more accurate if I calibrate 3 times per day?<a class="headerlink" href="#how-often-should-i-calibrate-is-it-true-that-my-sensor-will-be-more-accurate-if-i-calibrate-3-times-per-day" title="Permanent link">⌁</a></h4>
+<p>No. You should <strong>only</strong> calibrate <strong>when you need to</strong>.</p>
+<p>Ideally, if there is no change to the sensor reliability, then just one good calibration would last "forever".</p>
+<p>In reality, the sensor filament will slowly degrade whilst inside your body and lose accuracy. The area of tissue around the sensor may get slightly inflamed and your body may start to form scar tissue around the filament insertion path. These effects are generally very small, but can affect the accuracy of the readings taken from the sensor.</p>
+<p>The filament will likely also move slightly inside your arm (or wherever you have it inserted) and this will again cause slightly different readings.</p>
+<p>For these reasons, it's normal to have to calibrate maybe every 5-7 days... sometimes more, sometimes less.</p>
+<p>It should NEVER be necessary to calibrate every 12 hours or even every day.</p>
+<h4 id="how-do-i-make-a-good-calibration">How do I make a good calibration?<a class="headerlink" href="#how-do-i-make-a-good-calibration" title="Permanent link">⌁</a></h4>
+<p>The important thing is to always make a <strong>good</strong> calibration. That means following (at a minimum) the following rules strictly:</p>
+<ul>
+<li>Never calibrate against a Freestyle Libre "scan". Remember that the Libre is an uncalibrated source and although you could be lucky you should never assume it is accurate (it usually won't be for most people). You should <strong>always</strong> calibrate against a blood glucose measurement (preferibly using a good quality blood glucose meter such as a Contour Next).<br /><br /></li>
+<li><strong>Always</strong> calibrate when in a <strong>normal range</strong> (90-140mg/dl for example)<br /><br /></li>
+<li><strong>Always</strong> calibrate when your blood glucose trend is <strong>stable</strong>. That means that it isn't noticeably rising or falling at all. If you have just eaten that, don't calibrate. If you have administered a bolus treatment over 20 minutes ago, don't calibrate either. You basically want to know that although your current sensor glucose trend is stable, there is nothing affecting what your actual blood glucose trend is doing. Remember that there is a small delay (10-15 minutes) between any blood glucose changes and this change being reflected in your sensor glucose values.<br /><br /></li>
+<li><strong>Never</strong> calibrate outside of a normal range or when your sensor glucose trend is not stable. If you need to calibrate out of range (such as when starting a new sensor), do so and remember not to trust the values until you can calibrate again when back <strong>in range</strong> and <strong>stable</strong><br /><br /></li>
+</ul>
+<p>Once you've done this and you can verify that the calibration accurately reflects future blood glucose values (again, when in target range and when stable), then you should only calibrate again if you are seeing differences of &gt;10-15mg/dl against blood.</p>
+<ul>
+<li>if using non-fixed slope calibration, try and make a good calibration at around 80mg/dl and then another at around 150mg/dl. The rest of the rules still apply.</li>
+</ul>
+<p></br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
