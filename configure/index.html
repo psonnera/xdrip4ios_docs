@@ -9,27 +9,26 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>General - xDrip4iOS</title>
+  <title>Settings - xDrip4iOS</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../css/admonitions.css" rel="stylesheet" />
   <link href="../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "General";
-    var mkdocs_page_input_path = "configure/index.md";
+    var mkdocs_page_name = "Settings";
+    var mkdocs_page_input_path = "configure\\index.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -43,7 +42,7 @@
         <a href=".." class="icon icon-home"> xDrip4iOS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -63,6 +62,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../install/build/">Build from Source</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../install/personal_testflight/">How Do I Release?</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Connect</span></p>
                 <ul>
@@ -77,9 +78,15 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">General</a>
+                    <li class="toctree-l1"><a class="reference internal" href="homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Settings</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#help">Help</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#show-notifications">Show Notifications</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#home-view">Home View</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#objective-values">Objective Values</a>
         <ul>
@@ -99,11 +106,19 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#treatments">Treatments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#statistics">Statistics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sensor-countdown">Sensor countdown</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="alarms/">Alarms</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="treatments/">Treatments</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="applewatch/">Apple Watch</a>
                     </li>
@@ -153,7 +168,7 @@
         
       
     
-    <li>General</li>
+    <li>Settings</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -161,6 +176,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -168,9 +184,15 @@
 <p><img src="../img/Settings.png" style="zoom:75%;" /></p>
 <p>In a <a href="../connect/">previous section</a>, you should have initially configured xDrip4iOS to use <strong>mg/dl</strong> or <strong>mmol/l</strong> and to act as a <strong>Master</strong> or <strong>Follower</strong> device.</p>
 <p>Now we can start to configure the app to work as we want. When you first install xDrip4iOS, we will put some default values that should work fine for most users to start using the app with.</p>
+<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">⌁</a></h2>
+<p><img src="img/Help.png" style="zoom:50%;" /></p>
+<p>Open Online Help will drive you directly to this documentation. If you enabled Translate Automatically, you will see a Google automatic translation version of the documentation.</p>
+<p>Show Help Icon will add a shortcut icon to the Home view:</p>
+<p><img src="img/HelpShortcut.png" style="zoom:50%;" /></p>
 <hr />
 <h2 id="show-notifications">Show Notifications<a class="headerlink" href="#show-notifications" title="Permanent link">⌁</a></h2>
-<p>You can enable xDrip4iOS to show a notification on your phone every 5 minutes. This will appear as per the Notification settings for xDrip4iOS in your iPhone settings. You can enable banner notifications and chose if it will show on the lock-screen or not.</p>
+<p>You can enable xDrip4iOS to show a notification on your phone. This will appear as per the Notification settings for xDrip4iOS in your iPhone settings. You can enable banner notifications and chose if it will show on the lock-screen or not.<br />
+You can leave the interval at which the notification will appear or leave it at default 0: whenever new BG value is available to xDrip4iOS.</p>
 <p><img src="img/SettingsNotification.png" style="zoom:50%;" /></p>
 <p><img src="img/Notification.png" style="zoom:50%;" /></p>
 <p>You can also enable the App Badge which will should your current BG value on the app icon.</p>
@@ -184,6 +206,11 @@
 <p>If you disable Notifications you can use multiply by 10 to show the full value (you'll need to mentally add the decimal point. 94 means 9.4 mmol/l).</p>
 <p><img src="img/SettingsBadge10.png" style="zoom:50%;" /></p>
 <hr />
+<h2 id="home-view">Home View<a class="headerlink" href="#home-view" title="Permanent link">⌁</a></h2>
+<p>You can disable automatic rotation of the graph when you rotate your phone.</p>
+<p><img src="img/HomeScreen.png" style="zoom:50%;" /></p>
+<p>Show clock when Locked adds a large clock view on the Home screen when locked.</p>
+<p><img src="img/ShowClock.png" style="zoom:50%;" /></p>
 <h2 id="objective-values">Objective Values<a class="headerlink" href="#objective-values" title="Permanent link">⌁</a></h2>
 <p>We think of objective values as our working limits. We define theses limits as being:</p>
 <ul>
@@ -209,6 +236,21 @@
 <p>By deselecting the dynamic graph option, xDrip4iOS will just show a default grid system.</p>
 <p><img src="img/yStatic.png" style="zoom:50%;" /></p>
 <p>Again, the graph will scale as needed.</p>
+<hr />
+<h2 id="treatments">Treatments<a class="headerlink" href="#treatments" title="Permanent link">⌁</a></h2>
+<p>You can log <a href="treatments">treatments</a> in xDrip+, or receive them from Nightscout.<br />
+If treatments are present you can display them on the Home chart.</p>
+<p><img src="img/Treatments.png" style="zoom:50%;" /></p>
+<p>Micro-bolus (typically generated by DIY AAPS systems) can be displayed without the amount of insulin (select the threshold below which it's not displayed) and visualized in the treatments list.</p>
+<hr />
+<h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">⌁</a></h2>
+<p>xDrip4iOS calculates basic statistics, you can display them on the Home screen.<br />
+If you don't wish to use your objectives range you can leave the standard range.</p>
+<p><img src="img/Statistics.png" style="zoom:50%;" /></p>
+<hr />
+<h2 id="sensor-countdown">Sensor countdown<a class="headerlink" href="#sensor-countdown" title="Permanent link">⌁</a></h2>
+<p>You can enable the display of your sensor actual lifetime, used or remaining days (alternative graphics).</p>
+<p><img src="img/Sensor.png" style="zoom:50%;" /></p>
               
             </div>
           </div>
@@ -219,7 +261,7 @@
         <a href="alarms/" class="btn btn-neutral float-right" title="Alarms">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../connect/devices/" class="btn btn-neutral" title="Connect to M5Stack/M5StickC"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="homeview/" class="btn btn-neutral" title="Home Screen"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -242,17 +284,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../connect/devices/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="alarms/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="homeview/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="alarms/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>

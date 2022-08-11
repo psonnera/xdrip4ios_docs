@@ -14,22 +14,21 @@
 
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../css/admonitions.css" rel="stylesheet" />
   <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "Install from Testflight";
-    var mkdocs_page_input_path = "install/testflight.md";
+    var mkdocs_page_input_path = "install\\testflight.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -43,7 +42,7 @@
         <a href="../.." class="icon icon-home"> xDrip4iOS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -61,21 +60,11 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Install from Testflight</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-install-testflight">1. Install Testflight</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-join-the-beta-test">2. Join the Beta Test</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-install-xdrip4ios">3. Install xDrip4iOS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-configure-testflight-updates">4. Configure Testflight Updates</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#age-restrictions">Age Restrictions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#install-previous-builds">Install Previous Builds</a>
-    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../build/">Build from Source</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../personal_testflight/">How Do I Release?</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Connect</span></p>
@@ -91,11 +80,15 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">General</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">Settings</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/alarms/">Alarms</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/treatments/">Treatments</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
                     </li>
@@ -153,6 +146,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -165,52 +159,10 @@
 </ul>
 <p>The first option is easy for everybody. </p>
 <p>The second option is more complex and needs a Mac and some knowledge/experience, but it allows you to modify the code and install custom versions as required.</p>
-<p>Anybody who is using xDrip4iOS for looping should always build from source.
-</br></p>
+<p>Anybody who is using xDrip4iOS for looping will always need to build from source.</p>
 <hr />
-<h2 id="1-install-testflight">1. Install Testflight<a class="headerlink" href="#1-install-testflight" title="Permanent link">⌁</a></h2>
-<p>Please go to the App Store on your iPhone and search for "testflight". You should find the following app available.</p>
-<p><img src="../TestFlight01.png" style="zoom:50%;" /></p>
-<p>Click <strong>Get</strong> to install the app (you may be asked to confirm your Apple ID password).</p>
-<p>Once installed, open the Testflight app, press <strong>Continue</strong> at the start screen, <strong>Accept</strong> the terms and conditions and then <strong>Allow</strong> notifications.</p>
-<p><img src="../TestFlight06.png" style="zoom:50%;" /></p>
-<p>You can then exit the TestFlight app (there is no redeem code to enter)</p>
-<p><img src="../TestFlight02.png" style="zoom:50%;" /></p>
-<p></br></p>
-<h2 id="2-join-the-beta-test">2. Join the Beta Test<a class="headerlink" href="#2-join-the-beta-test" title="Permanent link">⌁</a></h2>
-<p>Once you have Testflight correctly installed, you can now join the xDrip4iOS Beta test. Click on the below link <strong>using your iPhone</strong>:</p>
-<p><a href="https://testflight.apple.com/join/dn0HF8ky">Link for <strong>xDrip4iOS Testflight Beta Invitation</strong></a></p>
-<p>When you open the link, go to Step 2 and click on <strong>Start Testing</strong> to begin.</p>
-<p><img src="../TestFlight03.png" style="zoom:50%;" /></p>
-<p><img src="../TestFlight04.png" style="zoom:50%;" /></p>
-<p></br></p>
-<h2 id="3-install-xdrip4ios">3. Install xDrip4iOS<a class="headerlink" href="#3-install-xdrip4ios" title="Permanent link">⌁</a></h2>
-<p>Once installed, the button will change to <strong>Open</strong>. Click it to open xDrip4iOS.</p>
-<p><img src="../TestFlight05.png" style="zoom:50%;" /></p>
-<p>From now on, you can just open the app using the icon on your iPhone just like any other app.</p>
-<p>TestFlight will open and you will see the xDrip4iOS icon. Click the Install button. Again, accept the terms and conditions, allow the notifications. <strong>This is important!</strong></p>
-<p><img src="../TestFlight07.png" style="zoom:50%;" /></p>
-<p>Now you're all done, you can start to <a href="../../connect/">connect</a> xDrip4iOS to your CGM source.
-</br></p>
-<h2 id="4-configure-testflight-updates">4. Configure Testflight Updates<a class="headerlink" href="#4-configure-testflight-updates" title="Permanent link">⌁</a></h2>
-<p><strong>Enable Notifications</strong></p>
-<p>Please make sure that you enable notifications for Testflight. This will let you know whenever a new version is pushed so that you can update. When an update is available the <strong>Open</strong> button will change to <strong>Update</strong>. Click it to update xDrip4iOS to the latest version. If it just shows <strong>Open</strong> then you are already on the latest available version.</p>
-<p><strong>Disable Automatic Updates</strong></p>
-<p>We recommened <strong>disabling</strong> automatic updates from within Testflight and selecting the option to manually update the application.</p>
-<p>If automatic updates is enabled, then it will usually happen during the night. In order to install the update, iOS will close the currently running instance of xDrip4iOS and you will then lose readings until you open the app again (or until the Missed Readings alarm is triggered and wakes you up!)
-</br></p>
-<hr />
-<h2 id="age-restrictions">Age Restrictions<a class="headerlink" href="#age-restrictions" title="Permanent link">⌁</a></h2>
-<p>If you need to setup xDrip4iOS for an Apple ID registered to a child under 13, you must change the iPhone account to an adult's Apple ID (i.e. your own) in order to install Testflight and join the xDrip4iOS test.</p>
-<p>Once xDrip4iOS is installed, you can remove your Apple ID and add your child's account again.
-</br></p>
-<h2 id="install-previous-builds">Install Previous Builds<a class="headerlink" href="#install-previous-builds" title="Permanent link">⌁</a></h2>
-<p>If you are having problems with the latest version, then you can always try and revert back to a previous version.</p>
-<p>To do this, open Testflight, click on <strong>Previous Builds</strong> and <strong>Install</strong> the one that you know was working. </p>
-<p><img src="../TestFlight08.png" style="zoom:50%;" /></p>
-<p><img src="../TestFlight09.png" style="zoom:50%;" /></p>
-<p><img src="../TestFlight10.png" style="zoom:50%;" /></p>
-<p>If you have to do this, make sure you <a href="../../troubleshoot/reporting_issues/">let us know about the problem</a>!</p>
+<p><strong>Please note that the current public Testflight accounts are full..</strong></p>
+<p>The only way to install xDrip4iOS is to either build it from source or to check the Facebook group for any available invitations on personal Testflights. Please join the group, read the rules and check for an open slot. <strong>Do not post asking for invitations</strong> or you will be removed from the group.</p>
               
             </div>
           </div>
@@ -244,17 +196,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../../faq/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../build/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../faq/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../build/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>

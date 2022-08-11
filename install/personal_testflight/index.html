@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>How Do I Release? - xDrip4iOS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/admonitions.css" rel="stylesheet" />
+  <link href="../../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How Do I Release?";
+    var mkdocs_page_input_path = "install\\personal_testflight.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> xDrip4iOS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Install</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../testflight/">Install from Testflight</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../build/">Build from Source</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How Do I Release?</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#community-guidelines">Community Guidelines</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#detailed-steps">Detailed Steps</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#archive-the-project">Archive the Project</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#upload-the-archive">Upload the Archive</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-users">Adding Users</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ask-the-user-to-accept-the-invitation">Ask the User to Accept The Invitation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-user-to-your-app">Add User to your App</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-from-testflight">Install from Testflight</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-i-update-my-release">How do I Update my Release?</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Connect</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/">Initial Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/cgm/">Connect to CGM as a Master</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/follower/">Connect to Nightscout as a Follower</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../connect/devices/">Connect to M5Stack/M5StickC</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configure/Using</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">Settings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/alarms/">Alarms</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/treatments/">Treatments</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/smartwatches/">Other Smartwatches</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Advanced</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced/freeaps/">FreeAPS (Loop) Integration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../advanced/freeapsx/">FreeAPS X (OpenAPS) Integration</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Troubleshoot</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/">Troubleshooting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../troubleshoot/connection_troubles.md">Cannot Connect?</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../troubleshoot/disconnections/">Disconnections?</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../troubleshoot/reporting.md">How to Report Errors</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">xDrip4iOS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Install &raquo;</li>
+        
+      
+    
+    <li>How Do I Release?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="open-a-personal-testflight">Open a Personal Testflight<a class="headerlink" href="#open-a-personal-testflight" title="Permanent link">⌁</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">⌁</a></h2>
+<p>If you have an Apple Developer account and have built xDrip4iOS for personal use, then you can also take advantage and distribute the app to a smaller number of users via your own personal TestFlight without the need for Apple review/approval.</p>
+<p>Please note that this is not the same as opening a public Testflight link for external testing with up to 10,000 users. This would need Apple Review approval and could result in your app being suspended as there is already one official Testflight release for xDrip4iOS.</p>
+<p>xDrip4iOS is a community-based project and opening a personal Testflight test and sharing it with some users from the community is a great thing to do. Plus you'll be helping out people who don't have access to a Mac and an Apple Developer Account.</p>
+<p>The way you do this is to basically to open a private closed-circle test for a maximum of 100 users, each of which will need to share with you their Apple ID email address so that you can send them the invitation via e-mail.</p>
+<p>The basic steps are:</p>
+<ul>
+<li>archive and upload the app to <strong>App Store Connect</strong></li>
+<li>invite another user to become a <strong>Customer Support Agent</strong> for your apps</li>
+<li>once that user has accepted the invitation, give that user access to the app</li>
+<li>they will then be able to install the app from <strong>Testflight</strong></li>
+</ul>
+<p>To do this you will need:</p>
+<ul>
+<li>knowledge to build xDrip4iOS from source as described <a href="../build/">here</a></li>
+<li>an Apple Developer account</li>
+<li>empathy and a willingness to help out other people</li>
+<li></li>
+</ul>
+<hr />
+<h2 id="community-guidelines">Community Guidelines<a class="headerlink" href="#community-guidelines" title="Permanent link">⌁</a></h2>
+<p>We don't like rules. In the same way as this is a fully open-source project where anybody can do what they like with the code, we would like you to consider the following guidelines to keep paying-forward and help the people in the T1D community.</p>
+<ul>
+<li>Don't charge anybody for this. That would be bad. xDrip4iOS (and this documentation) is written and maintained completely free-of-charge by developers/collaborators who don't even accept donations for their work.</li>
+<li>If you're going to do this and help out up to 100 other people, then please commit to keeping your Testflight builds up-to-date every time a new release comes out. It should just take 20 minutes of your time every few weeks but you will be really helping out other people.</li>
+<li>Remember that your build will expire after 90 days so please read again the last point to ensure it doesn't ;)</li>
+<li>Please don't upload an initial copy and then close the test or not bother to do anything again. Don't accept people into your test if you're going to get tired and kick them out after one month. Remember that lots of the people you are helping are looking after children with T1D and are counting on your support to be able to keep using the app.</li>
+</ul>
+<p>Yes, we know... the last three points are basically the same but they're <strong>very important</strong>. We can resume even further what we would ask you to commit to doing if you chose to follow this path:</p>
+<p><strong><em>"Keep your build as up-to-date as possible and don't charge anybody anything for your help. The end."</em></strong>
+___</p>
+<h2 id="detailed-steps">Detailed Steps<a class="headerlink" href="#detailed-steps" title="Permanent link">⌁</a></h2>
+<p>First you need to open the Workspace, configure the basic build settings and sign the targets in Xcode, from now on, we're going to assume you already know how to do that and have already done it. Once it is able to build correctly and without any compiler errors, then we can archive the project (this means converting it into a single file containing all of the required data), upload it to App Store Connect and then configure your users to allow them access to install and use the app.</p>
+<p>Ready? So let's begin...</p>
+<h3 id="archive-the-project">Archive the Project<a class="headerlink" href="#archive-the-project" title="Permanent link">⌁</a></h3>
+<p>The first thing to do is to set up Xcode for archiving. Unlike building, where we need to select our specific device (or a chosen simulator if we are developing/testing), the archiving process produces a generic file, not tied to any one type of device. To do this, we need to select <strong>Any iOS Device (arm64)</strong> from the dropdown menu.</p>
+<p><img src="../img/anyiOSDevice.png" /></p>
+<p>Next we should go to the top menu and chose <strong>Archive</strong></p>
+<p><img src="../img/ProductArchive.png" /></p>
+<p>The archiving process can take a few minutes.</p>
+<h3 id="upload-the-archive">Upload the Archive<a class="headerlink" href="#upload-the-archive" title="Permanent link">⌁</a></h3>
+<p>When the build process has completed, the following screen should open up, select <strong>Distribute App</strong></p>
+<p><img src="../img/Picture2.png" /></p>
+<p>In the next screen, <strong>App Store Connect</strong> is selected by default, select <strong>Next</strong></p>
+<p><img src="../img/Picture3.png" /></p>
+<p>In the next screen, <strong>Upload</strong> is selected by default, select <strong>Next</strong></p>
+<p><img src="../img/Picture4.png" /></p>
+<p>In the next screen, you should give your app a "new" name for Testflight. Please keep the name <strong>exactly</strong> as it is and just add "<strong>_</strong>" followed by your initials. Again, please <strong>do not modify</strong> the actual app name, format or case. Just add your initials to the end.</p>
+<p>For example. If your name was James Hetfield, your app name should be <strong>xDrip4iOS_JH</strong></p>
+<p>If you name was Paul McCartney, your app name should be <strong>xDrip4iOS_PC</strong></p>
+<p>Now, set the primary language to <strong>English</strong> and click <strong>Next</strong> (note: you will have your own unique SKU - <strong>don't change it!</strong>)</p>
+<p><img src="../img/Picture5.png" /></p>
+<p>If you still get an error because there is another xDrip4iOS_JH, then just put _JH1.</p>
+<p>In the next screen, click <strong>Next</strong></p>
+<p><img src="../img/Picture6.png" /></p>
+<p>In the next screen, click <strong>Next</strong> <em>(this example screenshot is for another app)</em></p>
+<p><img src="../img/Picture7.png" /></p>
+<p>In the next screen, click <strong>Upload</strong> <em>(this example screenshot is for another app)</em></p>
+<p><img src="../img/Picture8.png" /></p>
+<p>Wait until uploading is finished <em>(this example screenshot is for another app)</em></p>
+<p><img src="../img/Picture9.png" /></p>
+<p>You should see this screen when uploading is finished <em>(this example screenshot is for another app)</em></p>
+<p><img src="../img/Picture10.png" /></p>
+<h3 id="adding-users">Adding Users<a class="headerlink" href="#adding-users" title="Permanent link">⌁</a></h3>
+<p>Now we have successfully uploaded the archive file to App Store Connect. You'll need to wait for a short time whilst the file is processed. You'll get an e-mail when processing is completed (it usually takes around 10 minutes).</p>
+<p>Log into <a href="https://appstoreconnect.apple.com/login">App Store Connect</a></p>
+<p>Select <strong>Users and Access</strong></p>
+<p><img src="../img/Picture11.png" style="zoom:50%;" /></p>
+<p>We must select the type of <strong>role</strong> that we want to assign to the new user. It isn't too important as our only aim is to give them access to test the app. As an example we will select <strong>Customer Support</strong> as the user type that we're going to add.</p>
+<p><img src="../img/Picture12.png" style="zoom:50%;" /></p>
+<p>Please note that there is a limit (around 50) to how many users we can add with each role type. As an example, we would add the first 40 users as <strong>Customer Service</strong>, 40 more as <strong>Marketing</strong>, then the last 20 as <strong>Finance</strong> etc.</p>
+<p>Click the "<strong>+</strong>" symbol to add a new user</p>
+<p>Fill in the First name, Last name and email address (this <strong>must</strong> be their Apple ID) of the new tester you want to add and click <strong>Invite</strong>. </p>
+<p><img src="../img/Picture13.png" style="zoom:50%;" /></p>
+<h3 id="ask-the-user-to-accept-the-invitation">Ask the User to Accept The Invitation<a class="headerlink" href="#ask-the-user-to-accept-the-invitation" title="Permanent link">⌁</a></h3>
+<p>The recipient (in this example, <em>recipientemailaddress@domain.com</em>), will receive an invitation email from Apple.</p>
+<p>Ask him or her to check his or her email and to accept the invite.</p>
+<p><img src="../img/Picture14.png" style="zoom:50%;" /></p>
+<p>This will open App Store Connect web page (not the app) in a browser window for them. They should confirm that they agree to test your app.</p>
+<h3 id="add-user-to-your-app">Add User to your App<a class="headerlink" href="#add-user-to-your-app" title="Permanent link">⌁</a></h3>
+<p>Now go back to <a href="https://appstoreconnect.apple.com">App Store Connect</a>, and select <strong>My Apps</strong></p>
+<p>Make sure the app <strong>xDrip4iOS</strong> is selected and click on the <strong>TestFlight</strong> tab at the top of the page.</p>
+<p><img src="../img/Picture15.png" style="zoom:50%;" /></p>
+<p>Click Internal Testing -&gt; <strong>App Store Connect Users</strong></p>
+<p>Click <strong>+</strong> to add a tester</p>
+<p><img src="../img/Picture16.png" style="zoom:50%;" /></p>
+<p>Select the newly added tester from the previous step and you're all done</p>
+<div class="admonition warning">
+<p class="admonition-title">Do NOT add External Testers</p>
+<p>In the Testflight tab of App Store Connect you will see two ways to add testers:</p>
+<ul>
+<li>App Store Connect Users</li>
+<li>External Testers</li>
+</ul>
+</div>
+<p><img src="../img/appstoreusers.png" /></p>
+<p>You must <strong>only</strong> use App Store Connect Users to privately add your users (max 100 users). <strong>Do not add any External Testers</strong>. This is what you would need to do for a 10,000 user public test and will submit a review of your app by the Apple Review board.</p>
+<h3 id="install-from-testflight">Install from Testflight<a class="headerlink" href="#install-from-testflight" title="Permanent link">⌁</a></h3>
+<p>The new tester should now install the <strong>TestFlight</strong> app if they don't already have it (it's available in the regular App Store) on their device and sign in with their Apple ID.</p>
+<p>When they open the TestFlight app, they should be able to see your release of xDrip4iOS and install it on their device. <strong>Please note that it might take 10-15 minutes for the app to appear in their Testflight. Ask them to be patient</strong>.</p>
+<hr />
+<h2 id="how-do-i-update-my-release">How do I Update my Release?<a class="headerlink" href="#how-do-i-update-my-release" title="Permanent link">⌁</a></h2>
+<p>Whenever there is an update available to the main branch, please update your local repository and follow these instructions again to archive and upload your release.</p>
+<p>Your tester(s) should be informed by a notifiation that a new version is available and it will prompt them to update the app</p>
+<p>The process to update a Testflight build is very simple and consists of two operations:</p>
+<ol>
+<li>Update your local code following the <a href="../build/#how-do-i-update">update instructions on the build page</a>.</li>
+<li>Upload your updated build to Testflight following the instructions above.</li>
+</ol>
+<p>That's it. It really is that simple. Once you do this, as you have kept all previous signing and build settings, the new build will automatically be offered to your personal Testflight users and will directly replace the old app (keeping all settings and data) when they update.</p>
+<p>If you do not follow the update instructions and try to manually "hack" things to make them work, you could end up creating a duplicate app.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../connect/" class="btn btn-neutral float-right" title="Initial Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../build/" class="btn btn-neutral" title="Build from Source"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../build/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../connect/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

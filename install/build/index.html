@@ -14,22 +14,21 @@
 
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../css/admonitions.css" rel="stylesheet" />
   <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "Build from Source";
-    var mkdocs_page_input_path = "install/build.md";
+    var mkdocs_page_input_path = "install\\build.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -43,7 +42,7 @@
         <a href="../.." class="icon icon-home"> xDrip4iOS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -63,15 +62,25 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Build from Source</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#apple-developer-account">Apple Developer Account</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#install-the-cocoa-pods-framework-to-your-mac">Install the Cocoa Pods Framework to your Mac</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#clone-the-xdripswift-project">Clone the xdripswift project</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#install-cocoa-pods-dependencies">Install Cocoa Pods Dependencies</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#set-the-bundle-identifier">Set the Bundle Identifier</a>
+    <li class="toctree-l2"><a class="reference internal" href="#configure-the-override-file">Configure the Override File</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#build-the-project">Build the Project</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-i-update">How do I Update?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-problems">Update Problems?</a>
     </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../personal_testflight/">How Do I Release?</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Connect</span></p>
@@ -87,11 +96,15 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">General</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">Settings</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/alarms/">Alarms</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/treatments/">Treatments</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
                     </li>
@@ -149,6 +162,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -168,23 +182,43 @@
 <li>A compatible cable to connect your iPhone (Lightning port) to your Mac (USB-C or USB-A as needed)</li>
 </ul>
 <p>It is recommeneded to always use the latest versions of MacOS and Xcode. Your iPhone should ideally also be using the latest version of iOS.</p>
-<div class="admonition info">
-<p class="admonition-title">APPLE "M1" PROCESSOR?</p>
-<p>If you are using a newer (2020-2021) Mac Mini, MacBook Air or MacBook Pro with the new M1 processor (aka <em>Apple Silicon</em>) please note that there will be some small changes needed in the below steps. They will be clearly marked.</p>
-<p>The first thing to note is that you should use </p>
-</div>
+<hr />
+<h3 id="apple-developer-account">Apple Developer Account<a class="headerlink" href="#apple-developer-account" title="Permanent link">⌁</a></h3>
+<p>To be able to build and run xDrip4iOS without restrictions on your personal devices, you will ideally need an Apple Developer Account. This is a paid account (around 100 EUR/USD per year) which gives you full access to Apple development tools and documentation, together with the ability to self-sign your own apps (or submit them to Testflight or App Store if you wanted).</p>
+<p>More information at the <a href="https://developer.apple.com">Apple Developer</a> website.</p>
 <hr />
 <h3 id="install-the-cocoa-pods-framework-to-your-mac">Install the Cocoa Pods Framework to your Mac<a class="headerlink" href="#install-the-cocoa-pods-framework-to-your-mac" title="Permanent link">⌁</a></h3>
 <p>If this is the first time that you have built xDrip4iOS on your Mac, then you will need to install a set of frameworks called CocoaPods. If you have previously installed CocoaPods, you can skip this step.</p>
-<p>Enter the following command into Terminal. This must be done with admin rights, so we will use <strong>sudo</strong> (it will ask for your admin password):</p>
+<div class="admonition info">
+<p class="admonition-title">APPLE "M1" PROCESSOR?</p>
+<p>In this step, the process will change slightly depending on the type of Mac you are using. You will be using either an Intel-based or M1-based Mac.</p>
+<ul>
+<li>The newer Mac Mini, MacBook Air or MacBook Pro (2020-2021) will generally have the new M1 processor (aka <em>Apple Silicon</em>)</li>
+<li>Most older Macs (&lt;2020) will be running Intel processesors and will not need the following step to be carried out</li>
+</ul>
+<p>If you are one of these newer M1 Macs, then you <strong>must perform</strong> the following steps before trying to install the Cocoapods framework.</p>
+<p>Firslty, make sure you run Terminal using <em>Rosetta</em> (this is an Apple tool that allows you to <em>translate</em> older applications to run on the newer M1 architecture):</p>
+<ul>
+<li>Right-click on Terminal in Finder</li>
+<li>Click "Get Info"</li>
+<li>Select "Open with Rosetta"</li>
+<li>Clikc "OK"</li>
+</ul>
+<p>Then, open Terminal and run the following command to install <strong>ffi</strong>:</p>
+<p><strong>sudo gem install ffi</strong></p>
+<p>Once successfully installed, you should now be able to continue as per the Intel instructions below</p>
+</div>
+<p>To install the Cocoapods framework to your Mac, please enter the following command:</p>
 <pre><code>sudo gem install cocoapods
 </code></pre>
-<p>This should install the dependencies onto your system and give you an OK message.</p>
+<p>Note the use of "<strong>sudo</strong>" here to elevate the permissions to allow installation at a system level. If asked for your password, use the admin password that you use to log into your Mac (this is generally just your user password).</p>
+<p>You should get an "OK" message confirming successfull installation. </p>
 <h3 id="clone-the-xdripswift-project">Clone the xdripswift project<a class="headerlink" href="#clone-the-xdripswift-project" title="Permanent link">⌁</a></h3>
-<p>You should go into your Documents folder (or wherever you prefer) and run the following command to clone the xDrip4iOS project:</p>
+<p>Good job for getting to here. Now it's time to grab a copy of the source code from Github and build the project.</p>
+<p>You should open Terminal, navigate into your Documents folder (or wherever you prefer) and run the following command to clone the xDrip4iOS project:</p>
 <pre><code>git clone --branch=master --recurse-submodules https://github.com/JohanDegraeve/xdripswift
 </code></pre>
-<p>This will create a new folder called xdripswift. Once completed we should navigate into this folder:</p>
+<p>This will create a new folder called xdripswift and it will copy all needed code into it. Once completed we should navigate into this folder:</p>
 <pre><code>cd xdripswift
 </code></pre>
 <h3 id="install-cocoa-pods-dependencies">Install Cocoa Pods Dependencies<a class="headerlink" href="#install-cocoa-pods-dependencies" title="Permanent link">⌁</a></h3>
@@ -192,35 +226,101 @@
 <pre><code>pod install
 </code></pre>
 <p>Again, you will see some activity and you should get an OK message.</p>
-<p>Open the WorkSpace file by typing:</p>
-<p>xed .</p>
-<h3 id="set-the-bundle-identifier">Set the Bundle Identifier<a class="headerlink" href="#set-the-bundle-identifier" title="Permanent link">⌁</a></h3>
-<p>Here you should create a unique Bundle Identifier for each target. The default value in the project is:</p>
-<p>net.johandegraeve.xdripswift<br />
-net.johandegraeve.xdripswift.xDrip4iOS-Widget</p>
-<p>Obviously, this is already in use by Johan so we need to change them.</p>
-<p>You should change the part that says "<strong>net.johndegraeve</strong>" to something that nobody else is using. You can use anything you want such as:</p>
-<ul>
-<li><strong>com.ilovetheweekend</strong>.xdripswift</li>
-<li>
-<p><strong>com.ilovetheweekend</strong>.xdripswift.xDrip4iOS-Widget
-<br /><br /></p>
-</li>
-<li>
-<p><strong>net.keithrichards</strong>.xdripswift</p>
-</li>
-<li>
-<p><strong>net.keithrichards</strong>.xdripswift.xDrip4iOS-Widget
-<br /><br /></p>
-</li>
-<li>
-<p><strong>com.anything-i-want</strong>.xdripswift</p>
-</li>
-<li><strong>com.anything-i-want</strong>.xdripswift.xDrip4iOS-Widget</li>
-</ul>
-<p>Just invent something and try it. If somebody else is already using this identifier, then you'll get an error and can just chose another one.</p>
-<p>Now you should sign both targets with your Development Team, connect your iPhone to your Mac, select your device and hit <strong>Build</strong> ("Play")</p>
-<p></br></p>
+<h3 id="configure-the-override-file">Configure the Override File<a class="headerlink" href="#configure-the-override-file" title="Permanent link">⌁</a></h3>
+<p>In order to make building as easy as possible, we have adopted the use of XCconfig files. Whilst this may seem unnecessary at first glance, it will make things much easier for future installs.</p>
+<p>Right click the following link, chose the "<strong>Save Link As...</strong>" or "<strong>Download Linked File As...</strong>" option and save the file to your xdripswift folder:</p>
+<p><a href="https://raw.githubusercontent.com/JohanDegraeve/xdripswift/0d485d1978bf90fb51b3a6cef8389f8daddb595d/xDripConfigOverride.xcconfig">xDripConfigOverride.xcconfig</a></p>
+<p>Open this file in TextEdit or Xcode and you will see the following structure. You will need to edit the lines highlighted in <span style="color:blue">blue</span>.</p>
+<hr />
+<p><span style="color:gray">MAIN_APP_DISPLAY_NAME = xDrip4iO5</span></p>
+<p><span style="color:gray">// Put your team id here for signing<br /></span>
+<span style="color:blue">// XDRIP_DEVELOPMENT_TEAM =</span></p>
+<p><span style="color:gray">// Change to support running multiple apps simultaneously.<br /></span>
+<span style="color:blue">// MAIN_APP_BUNDLE_IDENTIFIER = com.$(DEVELOPMENT_TEAM).xdripswift</span></p>
+<hr />
+<p>You should remove the "//" characters to uncomment these lines and in XDRIP_DEVELOPMENT_TEAM add your Development Team Identifier to this line.</p>
+<p>If you <strong>have</strong> a paid Developer account, then you will probably already know this identifier. If not, then you can log into the Apple Developer Portal and look at the Membership section](https://developer.apple.com/account/#!/membership). You can find your ID here:</p>
+<p><img src="../img/developerid.png" /></p>
+<p>Put this ID (your ID, not the example shown below) here:</p>
+<p><span style="color:red">//</span>XDRIP_DEVELOPMENT_TEAM = <span style="color:green">95C72J2362</span></p>
+<div class="admonition info">
+<p class="admonition-title">No Apple Development Account?</p>
+<p>If you <strong>don't</strong> have a paid Developer account then you can always use something else. Examples:
+<br /><br />
+<span style="color:red">//</span>XDRIP_DEVELOPMENT_TEAM = <span style="color:green">johnsmith</span>
+<br />
+<span style="color:red">//</span>XDRIP_DEVELOPMENT_TEAM = <span style="color:green">iloveinsulin</span></p>
+<p>If you get an error message that the Bundle Identifier is not available it's because somebody else has already used/registered it. Just choose a different one. It can even be completely random such as "DI20F77G9S0WLKWOCYVH". Just make sure you keep a note of it.</p>
+</div>
+<p>Finally, just uncomment the MAIN_APP_BUNDLE_IDENTIFIER line. No need to edit anything else. Your file should now look like this:</p>
+<hr />
+<p><span style="color:gray">MAIN_APP_DISPLAY_NAME = xDrip4iO5</span></p>
+<p><span style="color:gray">// Put your team id here for signing<br /></span>
+<span style="color:green">XDRIP_DEVELOPMENT_TEAM = 95C77J2362</span><span style="color:blue"> <em>&lt;--- here you put your unique ID</em></span></p>
+<p><span style="color:gray">// Change to support running multiple apps simultaneously.<br /></span>
+<span style="color:green">MAIN_APP_BUNDLE_IDENTIFIER = com.$(DEVELOPMENT_TEAM).xdripswift</span></p>
+<p>Make sure you save/close the file and exit out of the editor/Xcode before continuing.</p>
+<hr />
+<h3 id="build-the-project">Build the Project<a class="headerlink" href="#build-the-project" title="Permanent link">⌁</a></h3>
+<p>Now we're going to open the Workspace file. Go back to terminal and run the following command (again, inside your xdripswift folder).</p>
+<pre><code>xed .
+</code></pre>
+<p>Open the xdrip file on the left of the screen and you should see that your Bundle Identifier has been correctly configured with the values you used in the previous step.</p>
+<p>Now you'll need to "sign" the targets in order to allow Xcode to create a provisioning profile to be able to install the app to your iPhone. Go to the <strong>Signing &amp; Capabilities</strong> tab one and select your <strong>Team</strong> in the drop down Signing option for each target.</p>
+<p>Please note that there are <strong>four</strong> targets to sign:</p>
+<ol>
+<li>xdrip</li>
+<li>xDrip4iOS Widget</li>
+<li>Watch App</li>
+<li>Watch App Watchkit Extension</li>
+</ol>
+<p>Repeat this for each target, connect your iPhone to your Mac, select your device at the top of the screen (don't select a simulator!) and hit <strong>Build</strong> ("Play")
+</br></p>
+<hr />
+<h3 id="how-do-i-update">How do I Update?<a class="headerlink" href="#how-do-i-update" title="Permanent link">⌁</a></h3>
+<p>From time to time, we will release updates to the xDrip4iOS application. When this happens, we will always merge the updated code into the master branch in Github and with this code, we will update the original Testflight release.</p>
+<p>We would always recommend keeping your build up-to-date with the latest release. Apart from new features, we will often include fixes and improvements in every release.</p>
+<p>You have two options for updating your build:</p>
+<ol>
+<li>Delete everything and start again. We don't recommend this, but it would work. Just delete the xdripswift folder and follow all instructions again from the top of this page.</br></br></li>
+<li>Use <strong>git</strong> to <strong>pull</strong> in the latest code changes (commits) and hit re-build. This is the preffered method and is what we will discuss below</li>
+</ol>
+<p>Why do we recommend option (2)? It is simple. If you make a mistake in downloading and configuring the freshly cloned code in (1), then your app will install as a completely new app. What you want to do is to overwrite the original app and keep all settings/data. This is why we prefer option (2).</p>
+<p>So we are starting with your existing xdripswift folder. This has the code you previously cloned and where you had edited xDripConfigOverride and also you had installed the cocoapods dependencies and signed the targets.</p>
+<p>First we are going to save a copy of these local changes that you have made.</p>
+<p>Make sure that you have closed Xcode completely, open <strong>Terminal</strong> and go to the <strong>xdripswift</strong> folder and run:</p>
+<pre><code>git stash
+</code></pre>
+<p>This will remove your changes and store them to one side whilst we do other things. We need to do this to remove your modifications before merging in the latest changes from the master branch in the main repository.</p>
+<p>Now we have returned your local copy to be the same as when it was first cloned, we need to pull downstream the changes in master and merge them into your local copy:</p>
+<pre><code>git pull --force
+</code></pre>
+<p>This is a single command to perform a git "fetch" followed by a git "merge" to pull all latest changes and merge them into your local copy.</p>
+<p>Now we need to re-apply the previously saved (stashed) changes. We do this by running:</p>
+<pre><code>git stash pop
+</code></pre>
+<p>We should now have the code fully updated and your local changes (signing etc) applied to the "new" code.</p>
+<p>Now we're going to open the Workspace file as before. Go back to Terminal and run the following command (again, inside your xdripswift folder).</p>
+<pre><code>xed .
+</code></pre>
+<p>Now continue with the steps as before in order to build xDrip4iOS.</p>
+<hr />
+<h2 id="update-problems">Update Problems?<a class="headerlink" href="#update-problems" title="Permanent link">⌁</a></h2>
+<p>Xcode can sometimes make this tricky when it comes to simply describing a series of timestamped text edits to code files (which is the basic idea behind source-code control - in this case we use Github). </p>
+<p>The main <strong>xdrip.xcodeproj</strong> and <strong>project.pbxproj</strong> files can easily get out of sync when big changes are made to the project structure and build settings and this makes it difficult to re-apply your previous changes. The update to 4.8.0 included very big changes with the addition of the Apple Watch app and new build variables/settings aimed to make things easier for newer builders.</p>
+<p>When this happens, it is possible that you will get a merge error in Terminal. If this happens, you must fix it before trying to open the Workspace file and build.</p>
+<pre><code>CONFLICT (content): Merge conflict in xdrip.xcodeproj/project.pbxproj
+</code></pre>
+<p>If you see the above error, the easiest way is to simply start all over again. If you already built once, then it will take you just a few minutes.</p>
+<p>Please follow these steps:</p>
+<ol>
+<li>Using Finder, browse to your xdripswift folder and <strong>copy your modified xDripConfigOverride file to the Desktop</strong> or wherever you want.</li>
+<li><strong>Delete</strong> your xdripswift folder completely.</li>
+<li>Go back to the Build instructions and start the whole process again to <strong>clone</strong> a new/updated copy of the master branch. </li>
+<li>Run "<strong>install pod</strong>" again from Terminal inside your new xdripswift folder.</li>
+<li>This time, copy in your previously modified xDripConfigOverride file before simply opening the workspace with "<strong>xed .</strong>" as before.</li>
+</ol>
+<p>Assuming that you really did follow the build instructions correctly the first time and didn't edit anything else, then you should be able to immediately just build the new version with no problems.</p>
               
             </div>
           </div>
@@ -228,7 +328,7 @@ net.johandegraeve.xdripswift.xDrip4iOS-Widget</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../connect/" class="btn btn-neutral float-right" title="Initial Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../personal_testflight/" class="btn btn-neutral float-right" title="How Do I Release?">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../testflight/" class="btn btn-neutral" title="Install from Testflight"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -254,17 +354,18 @@ net.johandegraeve.xdripswift.xDrip4iOS-Widget</p>
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../testflight/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../../connect/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../testflight/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../personal_testflight/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>

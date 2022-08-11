@@ -14,22 +14,21 @@
 
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../css/admonitions.css" rel="stylesheet" />
   <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "Calibration";
-    var mkdocs_page_input_path = "configure/calibrate.md";
+    var mkdocs_page_input_path = "configure\\calibrate.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -43,7 +42,7 @@
         <a href="../.." class="icon icon-home"> xDrip4iOS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -63,6 +62,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../install/build/">Build from Source</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../install/personal_testflight/">How Do I Release?</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Connect</span></p>
                 <ul>
@@ -77,7 +78,9 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../">General</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../">Settings</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../alarms/">Alarms</a>
                     </li>
@@ -89,7 +92,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#algorithms-and-calibration-methods">Algorithms and calibration methods</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#libre-algorithm">Libre algorithm</a>
+    <li class="toctree-l3"><a class="reference internal" href="#transmitter-algorithm">Transmitter algorithm</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#xdrip-algorithm-with-single-point-calibration">xDrip algorithm with single-point calibration</a>
     </li>
@@ -112,6 +115,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#other-notes">Other notes</a>
     </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../treatments/">Treatments</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../applewatch/">Apple Watch</a>
                     </li>
@@ -169,6 +174,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -195,23 +201,27 @@
 </div>
 <hr />
 <h2 id="algorithms-and-calibration-methods">Algorithms and calibration methods<a class="headerlink" href="#algorithms-and-calibration-methods" title="Permanent link">⌁</a></h2>
+<div class="admonition info">
+<p class="admonition-title">G6 and ONE</p>
+<p>G6 and ONE do not use the xDrip4iOS calibration algorithms but send the calibration request directly to the transmitter the same way the Dexcom app would do. You cannot use xDrip algorithm with these sensors.</p>
+</div>
 <p>xDrip4iOS application offers three different ways how the app interprets the raw SG values provided by the sensor. Each xDrip4iOS user needs to consider that what is the best method for <em>themselves</em> to use.</p>
 <ol>
-<li>Libre algorithm <em>(basic)</em></li>
+<li>Libre Transmitter algorithm <em>(basic)</em></li>
 <li>xDrip algorithm with single-point calibration <em>(recommended)</em></li>
 <li>xDrip algorithm with multi-point calibration <em>(advanced use)</em></li>
 </ol>
-<h3 id="libre-algorithm">Libre algorithm<a class="headerlink" href="#libre-algorithm" title="Permanent link">⌁</a></h3>
+<h3 id="transmitter-algorithm">Transmitter algorithm<a class="headerlink" href="#transmitter-algorithm" title="Permanent link">⌁</a></h3>
 <p>Choose this method if you have just started to use xDrip4iOS and/or you are not (yet) familiar enough with the concept of calibration that you would like to try it out and/or you just want a simple setup and you are ok with the inaccuracies that come from this method. </p>
-<p>Libre algorithm is not an actual calibration method at all, but more of a default setting in the app for those users, who don't want to spend time on thinking when or how to calibrate. For this method the app has a specific built-in algorithm that applies a correction to the BG reading provided by the sensor and then the corrected BG reading is shown to the user. The user is not able to impact to the correction which is done by the algorithm.</p>
+<p>Transmitter algorithm is not an actual calibration method at all, but more of a default setting in the app for those users, who don't want to spend time on thinking when or how to calibrate. For this method the app has a specific built-in algorithm that applies a correction to the BG reading provided by the sensor and then the corrected BG reading is shown to the user. The user is not able to impact to the correction which is done by the algorithm.</p>
 <div class="admonition info">
-<p class="admonition-title">Please note</p>
+<p class="admonition-title">Please note when using Transmitter algorithm!</p>
 <ul>
 <li>
-<p>Even if xDrip4iOS says that it uses <em>Libre</em> algorithm, there most likely are differences between the readings shown by LibreLink app and readings shown by xDrip4iOS.</p>
+<p>There will most likely be small differences between the readings shown by the LibreLink app and readings shown by xDrip4iOS.</p>
 </li>
 <li>
-<p>Please expect that there can be even relatively large differences between xDrip4iOS and your actual blood glucose reading.</p>
+<p>Please expect that due to the lack of calibration there could be relatively large differences between the reading shown in xDrip4iOS and your actual blood glucose reading.</p>
 </li>
 </ul>
 </div>
@@ -259,7 +269,7 @@
 <li>You need to understand that the finger prick reading you see in BG reader, is shown in xDrip4iOS only after the above mentioned delay. If you calibrate when your BG is steady, you know that you are giving the app a chance to calculate the best possible calibration correction. If you calibrate, when BG is not steady, you are shooting a moving target.</li>
 <li>Being steady does not mean only that your actual BG is steady but that also the reading in the app is steady. Probably everyone who wears a sensor and has gone to swimming, in sauna, out in the cold, layed on a sofa pressure on sensor etc. etc. have seen that the sensor reading might suddenly rise or fall. If you calibrate when this happens, you can be certain that the applied calibration is bad and you get very inaccurate BG readings from the app.</li>
 <li>Over time, you might learn to make calibrations also when your BG is not 100 % steady, e.g. <em>slowly</em> coming down. This is however not recommended for newbies due to a high probability of making an error.
-<br /><br /></li>
+  <br /><br /></li>
 </ul>
 </li>
 <li>
@@ -268,7 +278,7 @@
 <li>First reason is that you should not be too interested if you are 14 or 16 mmol/l or if you are 2,9 or 3,1 mmol/l. Either or, you know that you have a hyper or a hypo and you need to take actions. At this time the BG reading in the app and its accuracy does not matter <em>that</em> much. I.e. aim to get the in-range accuracy to be good and settle for that out-of-range accuracy might be so-so.</li>
 <li>Second reason is that the sensors themselves are the most accurate in range area and their inaccuracies increase when BG is outside the normal range. As we know, we want as accurate readings as possible, when calibrating, so you don't want to apply calibrations on top of inaccurate sensor readings.</li>
 <li>Of course, if the app says that you are out of range and shows 3,0 mmol/l but your actual BG (as per a finger prick) says 4,0 (<em>and</em> your BG is steady), you can calibrate. No T1D wants to hear low alarms blazing, when they are not actually hypo'ing.
-<br /><br /></li>
+  <br /><br /></li>
 </ul>
 </li>
 <li>
@@ -278,7 +288,7 @@
 <li>Use strips that have not expired. While it's <em>possible</em> to use expired strips and get accurate readings with them as well, do you want to take the chance?</li>
 <li>Wash your hands before you take the reading. You might have some residues in your fingers, which impact the measurement - wash them off first.</li>
 <li>Don't squeeze your fingertip to get a blood drop out.
-<br /><br /></li>
+  <br /><br /></li>
 </ul>
 </li>
 <li>
@@ -299,10 +309,15 @@
 </ul>
 <hr />
 <h2 id="how-to-calibrate-in-xdrip4ios">How to calibrate in xDrip4iOS?<a class="headerlink" href="#how-to-calibrate-in-xdrip4ios" title="Permanent link">⌁</a></h2>
+<p><img src="../img/CalibrateIcon.png" style="zoom:50%;" /></p>
+<div class="admonition info">
+<p class="admonition-title">G6 and ONE</p>
+<p>G6 and ONE do not use the xDrip4iOS calibration algorithms but send the calibration request directly to the transmitter the same way the Dexcom app would do. You cannot use xDrip algorithm with these sensors.</p>
+</div>
 <p>Alright, if you've read these instructions this far, you are ready for calibration. This section gives you instructions on how you will apply a new calibration in xDrip4iOS.</p>
 <ol>
 <li>Select the calibration method you want to use: either "Single-point calibration" or "Multi-point calibration". You can make this selection in "Bluetooth" tab in the app inside your transmitter.</li>
-<li>On the main screen of the app, click "Calibrate"</li>
+<li>On the main screen of the app, select "Calibrate"</li>
 <li>If you have just connected a new sensor (or resetted the calibrations by stop-&gt;start sensor), the app does not allow you to calibrate right away. You need to wait until the app gets at least two BG readings from the sensor, before a calibration can be applied.</li>
 <li>A pop-up opens, which asks you to enter a calibration value. Here you enter the value from your BG reader after a finger prick.</li>
 </ol>
@@ -311,18 +326,24 @@
 <p>Remember to monitor the readings in the app after a calibration; if they start to go up or down within 15-20 mins, there is a chance that your BG was not actually steady at the moment of the calibration, i.e. your actual BG had already started to change, but because this change was not yet visible in the app, the calibration was not accurate. Practice makes perfect and over time you might learn to do a relatively accurate calibrations, even when your BG is going <em>slowly</em> up or down, but the ground rule is: BG steady and in range. </p>
 <div class="admonition info">
 <p class="admonition-title">Please note</p>
-<ul>
-<li>If you notice that the calibration that you applied was bad (for whatever reason) and made the BG readings inaccurate, you can reset all the calibrations by stopping and starting the sensor. Unfortunately it is not possible to remove individual calibration values<br /><br /></li>
-<li>If you change the calibration method, it resets all the previous calibrations.</li>
-</ul>
 </div>
+<ul>
+<li>If you notice that the calibration that you applied was bad (for whatever reason) and made the BG readings inaccurate, you can reset all the calibrations by stopping and starting the sensor. Unfortunately it is not possible to remove individual calibration values</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">G6 and ONE</p>
+<p>Do NOT stop the sensor unless you physically want to remove it.<br />
+Only use restart if you know what you're doing.</p>
+</div>
+<p><br /><br />
+    * If you change the calibration method, it resets all the previous calibrations.</p>
 <hr />
 <h2 id="other-notes">Other notes<a class="headerlink" href="#other-notes" title="Permanent link">⌁</a></h2>
 <ul>
 <li>By default, xDrip4iOS has alerts to remind you to perform a calibration. If the app alerts you about this, it doesn't mean that you <em>must</em> do a new calibration. If you feel that these alerts/reminders occur too often, you can increase their interval. Often people turn calibration alerts even completely off.<br /><br /></li>
 <li>Sometimes a new calibration value makes the calibration slope and/or intercept to become something crazy without user noticing it right away. If you have a Nightscout installation, it is possible to see calibration curve there in the reports. There is a specific "Calibrations" report type for this.<br /><br /><ul>
 <li>This report returns you the current and the past calibration graphs so that you can look at them and assess their accuracy. You can also compare the previous curve and the current curve and think how the calibration that you just did changed the curve.<br /><br /></li>
-<li>It is to be noted that in Nightscout reports, the calibration report shows the graph as inverted: sensor raw value is on Y axis and BG reading value after the calibration on the X axis. This means that you need to know how to read the graph and slope and intercept values reported by Nightscout - this part is not explained in these instructions more than these below:<br /><br /><ul>
+<li>It is to be noted that in <a href="https://nightscout.github.io/nightscout/reports/#calibrations">Nightscout reports</a>, the calibration report shows the graph as inverted: sensor raw value is on Y axis and BG reading value after the calibration on the X axis. This means that you need to know how to read the graph and slope and intercept values reported by Nightscout - this part is not explained in these instructions more than these below:<br /><br /><ul>
 <li>Values in these reports are shown based on 'mg/dl' and multiplied by 1000. <br /><br /></li>
 <li>On the report, the intercept value of "-24000" is actually a positive intercept of 24 mg/dl or 1,5 mmol/l <br /><br /></li>
 <li>On the report, the slope value of 1100 is actually slope of 0,91  (1/1,1)</li>
@@ -338,7 +359,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../applewatch/" class="btn btn-neutral float-right" title="Apple Watch">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../treatments/" class="btn btn-neutral float-right" title="Treatments">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../alarms/" class="btn btn-neutral" title="Alarms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -364,17 +385,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../alarms/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../applewatch/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../alarms/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../treatments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>

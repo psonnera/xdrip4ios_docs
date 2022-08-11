@@ -14,22 +14,21 @@
 
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../css/admonitions.css" rel="stylesheet" />
   <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "FreeAPS (Loop) Integration";
-    var mkdocs_page_input_path = "advanced/freeaps.md";
+    var mkdocs_page_input_path = "advanced\\freeaps.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -43,7 +42,7 @@
         <a href="../.." class="icon icon-home"> xDrip4iOS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -63,6 +62,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../install/build/">Build from Source</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../install/personal_testflight/">How Do I Release?</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Connect</span></p>
                 <ul>
@@ -77,11 +78,15 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">General</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">Settings</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/alarms/">Alarms</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/treatments/">Treatments</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
                     </li>
@@ -96,8 +101,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-do-i-install-freeaps-loop">How do I install FreeAPS (Loop)?</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#clone-the-loopworkspace">Clone the LoopWorkspace</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#sign-the-targets">Sign the Targets</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#app-group">App Group</a>
@@ -157,6 +160,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -166,7 +170,7 @@
 <h2 id="what-is-freeaps-loop">What is FreeAPS (Loop)?<a class="headerlink" href="#what-is-freeaps-loop" title="Permanent link">⌁</a></h2>
 <p><strong>Loop</strong> is an <strong>Artificial Pancreas System</strong> (APS) written for the iPhone.</p>
 <p>An APS works by reading blood glucose values, predicting/calculating the insulin requirement and automatically adjusting a user's insulin pump with the aim of keeping the user within their target blood glucose range.</p>
-<p><a href="https://github.com/ivalkou/LoopWorkspace">FreeAPS</a> is a fork of the <a href="https://loopkit.github.io/loopdocs/">Loop</a> project developed and maintained by <strong>Ivan Valkou</strong>.</p>
+<p><a href="https://github.com/loopnlearn/LoopWorkspace">FreeAPS</a> is a fork of the <a href="https://loopkit.github.io/loopdocs/">Loop</a> project. This fork was originally developed by <strong>Ivan Valkou</strong>. His repository was frozen last spring. To support the users of the FreeAPS fork, maintenance has been taken over by the Loop and Learn mentors. </p>
 <div class="admonition info">
 <p class="admonition-title">FreeAPS vs FreeAPS X??</p>
 <p>This could get confusing, so pay attention:</p>
@@ -175,42 +179,18 @@
 <li>Ivan's newer <strong>FreeAPS X</strong> project is based on <strong>OpenAPS</strong>. It is a different system and is discussed <a href="../freeapsx/">here</a><br /><br /></li>
 </ul>
 </div>
-<p>The main difference between Loop and FreeAPS is that FreeAPS is able to administer insulin delivery via micro-boluses instead of adjusting basal rates. Although Loop also now has an autobolus branch which is similar, FreeAPS is much more customizable and flexible.</p>
-<p>It is important to note that the app developer has decided to halt all active development on FreeAPS in order to concentrate all efforts on his new FreeAPS X project. Collaborators are encouraged to participate with the maintenance of the fork.</p>
-<p>Whereas Loop will only work with compatible Dexcom or Medtronic pump-connected sensors, FreeAPS also contains a Nightscout client which can be used to pull glucose data from the user's Nightscout site, or via apps (such as Spike) that have an internal http server that mimics a Nightscout server. </p>
-<p>Pulling data from the cloud, or using http servers on iOS, are potentially unstable options for an APS (although they will generally work well most times).</p>
-<p><strong>Aleksandar Obucina</strong> has created a fork of Ivan's FreeASP (Loop). This includes an <a href="https://github.com/julian-groen/xdrip-client-swift">xdrip client</a> written in Swift by <strong>Julien Groen</strong>. This modified version of FreeAPS has xDrip4iOS as a CGM option and will pull glucose data directly offline from xDrip4iOS without needing to use any intermediate services.</p>
-<p>It is necessary to clone, build and install Aleksandar's fork of FreeAPS and then do the same with the master branch of xDrip4iOS.</p>
-<p>Important: The Testflight version of xDrip4iOS <strong>cannot</strong> be used with FreeAPS.</p>
+<p>The main difference between Loop and FreeAPS is that FreeAPS has a different methodology than Loop (v2.2.6 or later) for delivering extra insulin via micro-boluses and adjusting basal rates. FreeAPS is more customizable and flexible.</p>
+<p>For FreeAPS, v2.2 (202) or later, support is included for xDrip4iOS built off the work of and in the collaboration with Aleksandar Obucina and based upon an <a href="https://github.com/julian-groen/xdrip-client-swift">xdrip client</a> from Julien Groen.</p>
+<p>Whereas Loop will only work with compatible Dexcom or Medtronic pump-connected sensors, FreeAPS also contains a Nightscout client which can be used to pull glucose data from the user's Nightscout site (this requires internet access via WiFi or cell coverage), or via apps (such as Spike) that have an internal http server that mimics a Nightscout server. </p>
+<p>Using on-the-local-phone CGM access using Dexcom or xDrip4iOS (Dexcom G4/5/6 + Libre with some <a href="../..#compatible-sensors">limitations</a>) does not require internet access and is thus a preferred method for looping.</p>
+<p>Important: The Testflight version of xDrip4iOS <strong>cannot</strong> be used with FreeAPS. You must build xDrip4iOS from source.</p>
 <hr />
 <h2 id="how-do-i-install-freeaps-loop">How do I install FreeAPS (Loop)?<a class="headerlink" href="#how-do-i-install-freeaps-loop" title="Permanent link">⌁</a></h2>
-<p>Aleks' Github repository is <a href="https://github.com/alekst1d/LoopWorkspace">here</a>.</p>
-<p>In LoopDocs there is a nice page about cloning and building workspace files <a href="https://loopkit.github.io/loopdocs/build/loopworkspace/">here</a>.</p>
-<p>Please read the above page and ensure your Mac is fully updated (both MacOS and Xcode) and Xcode Command Line tools/Git are installed before proceeding.</p>
-<hr />
-<h3 id="clone-the-loopworkspace">Clone the LoopWorkspace<a class="headerlink" href="#clone-the-loopworkspace" title="Permanent link">⌁</a></h3>
-<p>First we need to create a folder where we will clone the source code and build the project.</p>
-<p>We recommened creating a folder in your Documents called "<strong>FreeAPS</strong>".</p>
-<p>Open <strong>Terminal</strong> on your Mac and type in the following to change to your Documents folder:</p>
-<p><em>(You can copy and paste the below text, one line at a time, pressing return after pasting each line)</em></p>
-<pre><code>cd documents
-</code></pre>
-<p>Create the new folder:</p>
-<pre><code>mkdir freeaps
-</code></pre>
-<p>Change into the newly created folder:</p>
-<pre><code>cd freeaps
-</code></pre>
-<p>We will now issue a Git command to clone (download) the current version of Aleks' repository into your new folder:</p>
-<pre><code>git clone --branch=freeaps --recurse-submodules https://github.com/alekst1d/LoopWorkspace
-</code></pre>
-<p>This will create a new folder called LoopWorkspace containing the source code. </p>
-<p>You should now navigate into this new folder:</p>
-<pre><code>cd LoopWorkspace
-</code></pre>
-<p>We will now open the workspace file in Xcode by typing the following:</p>
-<pre><code>xed .
-</code></pre>
+<p>The Loop and Learn repository is <a href="https://github.com/loopnlearn/LoopWorkspace">here</a>.</p>
+<p>With the advent of iOS 15 (Xcode 13), all Loop and FreeAPS builds require using LoopWorkspace. LoopDocs has been modifed for workspace builds.  If you follow the directions for <a href="https://loopkit.github.io/loopdocs/build/step14">LoopDocs: Build Loop App</a>, when you get to the instruction where you choose what Loop to build, select FreeAPS instead of Loop Master.</p>
+<p>Please read the <a href="https://loopkit.github.io/loopdocs/build/updating">LoopDocs: Updating</a> page to ensure your Mac is fully updated (both MacOS and Xcode) and Xcode Command Line tools/Git are installed before proceeding.</p>
+<p>Follow all instructions in LoopDocs for building the Loop app - the only difference is you to select FreeAPS instead of Loop when running the script in the terminal. </p>
+<p>Remember that xDrip4iOS is a separate app and must be <a href="../../install/build/">built from source</a> in order to successfully interface with FreeAPS.</p>
 <hr />
 <h3 id="sign-the-targets">Sign the Targets<a class="headerlink" href="#sign-the-targets" title="Permanent link">⌁</a></h3>
 <p>As per a normal Loop build, you will need to sign the four targets using your Development Team.</p>
@@ -260,17 +240,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../../configure/smartwatches/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../freeapsx/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../configure/smartwatches/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../freeapsx/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>

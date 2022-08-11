@@ -14,22 +14,21 @@
 
   <link rel="stylesheet" href="../../css/theme.css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   <link href="../../css/admonitions.css" rel="stylesheet" />
   <link href="../../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "Connect to M5Stack/M5StickC";
-    var mkdocs_page_input_path = "connect/devices.md";
+    var mkdocs_page_input_path = "connect\\devices.md";
     var mkdocs_page_url = null;
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -43,7 +42,7 @@
         <a href="../.." class="icon icon-home"> xDrip4iOS</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -63,6 +62,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../install/build/">Build from Source</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../install/personal_testflight/">How Do I Release?</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Connect</span></p>
                 <ul class="current">
@@ -74,16 +75,60 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Connect to M5Stack/M5StickC</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installing-with-a-windows-based-computer">Installing with a Windows-based Computer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-the-m5stack-usb-driver">Install the M5Stack USB Driver</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#if-your-computer-runs-windows-10">If your computer runs Windows 10</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#if-youre-running-an-older-version-of-windows">If you’re running an older version of Windows</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#download-the-latest-release">Download the Latest Release</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#program-the-m5stack">Program the M5Stack</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-with-a-macos-based-computer">Installing with a MacOS-based computer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-the-m5stack-usb-driver_1">Install the M5Stack USB Driver</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#if-your-computer-runs-a-recent-macos-version">If your computer runs a recent MacOS version</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#if-youre-running-an-older-macos-version">If you’re running an older MacOS version</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-the-esptool">Install the ESPTool</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#install-homebrew">Install Homebrew</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#download-the-latest-release_1">Download the Latest Release</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#program-the-m5stack_1">Program the M5Stack</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connect-to-xdrip4ios">Connect to xDrip4iOS</a>
+    </li>
     </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Configure/Using</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">General</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/homeview/">Home Screen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/">Settings</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/alarms/">Alarms</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/calibrate/">Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../configure/treatments/">Treatments</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../configure/applewatch/">Apple Watch</a>
                     </li>
@@ -141,12 +186,149 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
                 <p><img src="..\..\img\xdrip4ios.jpg" /></p>
-<h1 id="page-under-construction">Page under construction...<a class="headerlink" href="#page-under-construction" title="Permanent link">⌁</a></h1>
+<h1 id="m5stack-and-m5stick-devices">M5Stack and M5Stick Devices<a class="headerlink" href="#m5stack-and-m5stick-devices" title="Permanent link">⌁</a></h1>
+<p>Using a modified version of Martin Lukasek's <a href="https://github.com/mlukasek/M5_NightscoutMon">M5Stack_NightscoutMon</a> You can connect ESP32 displays directly to your phone trough Bluetooth to display your readings.</p>
+<p>Binaries are directly available for <a href="https://shop.m5stack.com/collections/stack-series/products/basic-core-iot-development-kit">M5Stack Core</a> and <a href="https://shop.m5stack.com/collections/stick-series/products/stick-c?variant=17203451265114">M5Stick C</a> device. If you wish to use different devices like M5Stack Core 2 you'll need to compile the code with <a href="https://www.arduino.cc/en/software">Arduino</a>.</p>
+<p><img src="..\M5Stack.png"  style="zoom:30%;" />   <img src="..\M5Stick.png"  style="zoom:50%;" /></p>
+<p>Two guides are provided below, using a Windows computer is usually easier. Mac instructions are <a href="#installing-with-an-ios-based-computer">here</a>.</p>
+<hr />
+<h2 id="installing-with-a-windows-based-computer">Installing with a Windows-based Computer<a class="headerlink" href="#installing-with-a-windows-based-computer" title="Permanent link">⌁</a></h2>
+<p>This guide explains step by step how to program your M5Stack with the M5Burner utility (Arduino not required).</p>
+<h3 id="install-the-m5stack-usb-driver">Install the M5Stack USB Driver<a class="headerlink" href="#install-the-m5stack-usb-driver" title="Permanent link">⌁</a></h3>
+<h4 id="if-your-computer-runs-windows-10">If your computer runs Windows 10<a class="headerlink" href="#if-your-computer-runs-windows-10" title="Permanent link">⌁</a></h4>
+<ul>
+<li>Go here: <a href="https://docs.m5stack.com/#/en/arduino/arduino_development">https://docs.m5stack.com/#/en/arduino/arduino_development</a> and download the driver.</li>
+</ul>
+<p><img src="..\InstallPC02.png" /></p>
+<h4 id="if-youre-running-an-older-version-of-windows">If you’re running an older version of Windows<a class="headerlink" href="#if-youre-running-an-older-version-of-windows" title="Permanent link">⌁</a></h4>
+<ul>
+<li>Go to of SiLabs <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers</a> and choose the version matching your operating system.</li>
+</ul>
+<p><img src="..\InstallPC01.png" /></p>
+<p>In the Downloads folder, extract the .zip file</p>
+<p>Open the extracted folder and run the installer for the correct platform type of the driver.</p>
+<p>Next, Accept, Next, Finish.</p>
+<p><img src="..\InstallPC03.png" /></p>
+<p>Connect your M5Stack device and wait a moment to make sure your computer recognized it.</p>
+<p>NB: <em>If you have previous versions of SiLabs drivers you might need to remove them in order to see the M5Stack serial port.</em></p>
+<hr />
+<h3 id="download-the-latest-release">Download the Latest Release<a class="headerlink" href="#download-the-latest-release" title="Permanent link">⌁</a></h3>
+<p><strong>M5Stack</strong>: Open this link in a new tab <a href="https://github.com/JohanDegraeve/M5_NightscoutMon/releases">https://github.com/JohanDegraeve/M5_NightscoutMon/releases</a></p>
+<p><strong>M5StickC</strong>: Open this link in a new tab <a href="https://github.com/JohanDegraeve/M5_StickC_xdrip_iOS/releases">https://github.com/JohanDegraeve/M5_StickC_xdrip_iOS/releases</a></p>
+<p><strong><em>Note:</em></strong> <em>take the latest release for your device and not the one from the example below</em></p>
+<p><img src="..\InstallPC04.png" /></p>
+<p>From the Downloads folder, extract the .zip file to <code>C:\</code></p>
+<p><strong>You can extract it wherever you want, but avoid a path name with spaces inside.</strong></p>
+<p><img src="..\InstallPC05.png" /></p>
+<p>Click Extract</p>
+<p><img src="..\InstallPC06.png" /></p>
+<hr />
+<h3 id="program-the-m5stack">Program the M5Stack<a class="headerlink" href="#program-the-m5stack" title="Permanent link">⌁</a></h3>
+<p>Open the device manager and check:</p>
+<ol>
+<li>M5Stack is available</li>
+<li>Which COM port it uses</li>
+</ol>
+<p><img src="..\InstallPC07.png" /></p>
+<p>From the folder <code>C:\M5Burner_NightscoutMon</code> (or the other folder you selected when extracting the .zip file) run the program <code>M5Burner.exe</code></p>
+<p><img src="..\InstallPC08.png" /></p>
+<p>If your computer uses Windows Defender you will need to authorize it to run.</p>
+<p><img src="..\InstallPC09.png" /></p>
+<p>This program was provided directly from M5Stack (Shenzhen Mingzhan Information Technology Co., Ltd.) with authorization to redistribute. We consider it as safe to run.</p>
+<p>The application opens, select your COM port, make baudrate 921600 and select the M5_NightscoutMon firmware.</p>
+<p><em>Note: I removed the COM number to avoid confusion since it might be different.</em></p>
+<p><img src="..\InstallPC10.png" /></p>
+<p>Click <code>Burn</code> </p>
+<p><img src="..\InstallPC12.png" /></p>
+<hr />
+<h2 id="installing-with-a-macos-based-computer">Installing with a MacOS-based computer<a class="headerlink" href="#installing-with-a-macos-based-computer" title="Permanent link">⌁</a></h2>
+<p>This guide explains step by step how to program your M5Stack with the ESPTool utility (Arduino not required).</p>
+<h3 id="install-the-m5stack-usb-driver_1">Install the M5Stack USB Driver<a class="headerlink" href="#install-the-m5stack-usb-driver_1" title="Permanent link">⌁</a></h3>
+<h4 id="if-your-computer-runs-a-recent-macos-version">If your computer runs a recent MacOS version<a class="headerlink" href="#if-your-computer-runs-a-recent-macos-version" title="Permanent link">⌁</a></h4>
+<ul>
+<li>Go here: <a href="https://docs.m5stack.com/#/en/arduino/arduino_development">https://docs.m5stack.com/#/en/arduino/arduino_development</a> and download the driver.</li>
+</ul>
+<p><img src="..\InstallMac01.png" /></p>
+<h4 id="if-youre-running-an-older-macos-version">If you’re running an older MacOS version<a class="headerlink" href="#if-youre-running-an-older-macos-version" title="Permanent link">⌁</a></h4>
+<ul>
+<li>Go to of SiLabs <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers</a> and choose the version matching your operating system.</li>
+</ul>
+<p><img src="..\InstallMac02.png" /></p>
+<p>Allow download and open finder to Downloads, folder Mac_OSX_VCP_Driver, double click the SiLabsUSBDriverDisk.dmg. The disk will extract on your desktop. Open it and run the installer.</p>
+<p><img src="..\InstallMac03.png" /></p>
+<p>Select Open</p>
+<p><img src="..\InstallMac04.png" /></p>
+<p>Click Continue, Continue, Agree to license…</p>
+<p><img src="..\InstallMac05b.png" /></p>
+<p>Continue, enter your password, Continue, Open Security Preferences</p>
+<p><img src="..\InstallMac06.png" /></p>
+<p>Unlock the panel (enter your password) and allow the driver, close Security &amp; Privacy</p>
+<p><img src="..\InstallMac07.png" /></p>
+<p>Wait until the install completes and close.</p>
+<p><img src="..\InstallMac08.png" /></p>
+<p>Connect the M5Stack device to your computer.</p>
+<h3 id="install-the-esptool">Install the ESPTool<a class="headerlink" href="#install-the-esptool" title="Permanent link">⌁</a></h3>
+<h4 id="install-homebrew">Install Homebrew<a class="headerlink" href="#install-homebrew" title="Permanent link">⌁</a></h4>
+<p>Open a terminal, copy and paste: </p>
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+</code></pre>
+
+<p>Enter your password when required, press RETURN to continue. It will take some time, be patient.</p>
+<p><img src="..\InstallMac09.png" /></p>
+<p>Then enter:</p>
+<pre><code>brew install esptool
+</code></pre>
+
+<p><img src="..\InstallMac10.png" /></p>
+<p>Wait until the command completes.</p>
+<p><img src="..\InstallMac11.png" /></p>
+<p>Connect your M5Stack to an USB plug of your Mac and enter: </p>
+<pre><code>esptool.py flash_id 
+</code></pre>
+
+<p>If your device is recognized correctly you will get the path of the serial port:</p>
+<p><img src="..\InstallMac12.png" /></p>
+<p>Take note of the port, in this case it is <code>/dev/cu.SLAB_USBtoUART</code> (yours might be different)</p>
+<h3 id="download-the-latest-release_1">Download the Latest Release<a class="headerlink" href="#download-the-latest-release_1" title="Permanent link">⌁</a></h3>
+<p>M5Stack: Open this link in a new tab <a href="https://github.com/JohanDegraeve/M5_NightscoutMon/releases">https://github.com/JohanDegraeve/M5_NightscoutMon/releases</a></p>
+<p>M5Stick: Open this link in a new tab <a href="https://github.com/JohanDegraeve/M5_StickC_xdrip_iOS/releases">https://github.com/JohanDegraeve/M5_StickC_xdrip_iOS/releases</a></p>
+<p><strong><em>Note:</em></strong> <em>take the latest release for your device and not the one from the example below</em></p>
+<p>Allow downloads on "github.com" if required.</p>
+<p><img src="..\InstallPC04.png" /></p>
 <p></br></p>
+<p>Once completed open your Download folder and navigate to M5_NightscoutMon below firmwares, inside M5Burner_NightscoutMon</p>
+<p><img src="..\InstallMac13.png" /></p>
+<h3 id="program-the-m5stack_1">Program the M5Stack<a class="headerlink" href="#program-the-m5stack_1" title="Permanent link">⌁</a></h3>
+<p>Right click on the folder and select New terminal at folder.
+A new terminal will open.</p>
+<p><img src="..\InstallMac14.png" /></p>
+<p>Copy and paste the following command verifying the port is identical to the one you noted before:</p>
+<pre><code>esptool.py --chip esp32 --port /dev/cu.SLAB_USBtoUART --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_freq 40m 0x1000 bootloader_0x1000.bin 0x10000 M5_NightscoutMon.ino.bin 0x8000 M5_NightscoutMon.ino.partitions.bin
+</code></pre>
+
+<p></br></p>
+<p>Wait until the command completes</p>
+<p><img src="..\InstallMac15.png" /></p>
+<hr />
+<h2 id="connect-to-xdrip4ios">Connect to xDrip4iOS<a class="headerlink" href="#connect-to-xdrip4ios" title="Permanent link">⌁</a></h2>
+<p>Your M5Stack should boot up like this and wait for connection from xDrip4iOS.</p>
+<p><img src="..\InstallPC11.png" /></p>
+<p>Open xDrip4iOS Bluetooth and add a new device.</p>
+<p>Select M5Stack then your device type and finally Scan.</p>
+<p><img src="..\M5Scan.png"  style="zoom:50%;" /></p>
+<p>Note: If your device was already connected follow the instructions to reset the password (disconnect, reset and connect).</p>
+<p>Your device will display the glucose value from xDrip4iOS when xDrip4iOS displays a value, and when within Bluetooth range.</p>
+<p>You can modify some settings like colors, screen rotation, and eventually turn of the monitor.</p>
+<p><img src="..\M5Device.png"  style="zoom:50%;" /></p>
+<p>More features documented in the project repositories</p>
+<p><a href="https://github.com/JohanDegraeve/M5_NightscoutMon#readme">https://github.com/JohanDegraeve/M5_NightscoutMon#readme</a></p>
+<p>and</p>
+<p><a href="https://github.com/JohanDegraeve/M5_StickC_xdrip_iOS#readme">https://github.com/JohanDegraeve/M5_StickC_xdrip_iOS#readme</a></p>
               
             </div>
           </div>
@@ -154,7 +336,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../configure/" class="btn btn-neutral float-right" title="General">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../configure/homeview/" class="btn btn-neutral float-right" title="Home Screen">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../follower/" class="btn btn-neutral" title="Connect to Nightscout as a Follower"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -180,17 +362,18 @@
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../follower/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../../configure/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../follower/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../configure/homeview/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
     <script defer>
